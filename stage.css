@@ -1,0 +1,55 @@
+.header{
+  position:static;
+}
+
+.stage-btn{
+  color:white;
+  text-transform: uppercase;
+  background-color:#04c1de;
+  padding: 10px;
+  border:none;
+  display:block;
+  margin:auto;
+  border-radius:20px;
+  letter-spacing: 0.25px;
+}
+.stage-btn:hover{
+  background-color: #03AFC8;
+}
+
+.stage-btn:focus{
+  outline: none;
+  border: none;
+}
+
+
+/* PATIENT STAGE */
+.patient-main{
+/*   background-color: yellow; */
+  text-align:center;
+}
+
+#localVideo{
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  height:50vh;
+  margin: 10vh 0;
+}
+
+
+/* PRACTITIONER STAGE */
+.pr-main{
+  max-width: 600px;
+  box-shadow: rgba(19, 35, 47, 0.3) 0px 4px 10px 4px;
+  background: rgb(255, 255, 255);
+  padding: 40px;
+  margin: 100px auto;
+  border-radius: 4px;
+}
+
+h2{
+  margin: 30px 0;
+}
+
+
+
+
