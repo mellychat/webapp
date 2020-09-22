@@ -202,7 +202,9 @@ textarea {
 }
 .forgot {
   margin-top: -20px;
+  margin-bottom: 15px;
   text-align: right;
+  color:#04c1de; ! important
 }
 
 #fileText {
@@ -212,4 +214,9 @@ textarea {
 
 #fileText .req {
   color: #04c1de;
+}
+
+#welcomeBack {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }

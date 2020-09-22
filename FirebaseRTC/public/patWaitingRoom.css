@@ -1,0 +1,147 @@
+body {
+    background: #ECEFF1;
+    color: rgba(0, 0, 0, 0.87);
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* #header{
+  position:static;
+} */
+
+#message {
+    background: white;
+    max-width: 360px;
+    margin: 100px auto 16px;
+    padding: 32px 24px;
+    border-radius: 3px;
+}
+
+#message h2 {
+    color: #ffa100;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0 0 8px;
+}
+
+#message h1 {
+    font-size: 22px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0 0 16px;
+}
+
+#message p {
+    line-height: 140%;
+    margin: 16px 0 24px;
+    font-size: 14px;
+}
+
+#message a {
+    display: block;
+    text-align: center;
+    background: #039be5;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+#message, #message a {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#load {
+    color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    body, #message {
+        margin-top: 0;
+        background: white;
+        box-shadow: none;
+    }
+
+    body {
+        border-top: 16px solid #ffa100;
+    }
+}
+
+body {
+    margin: 1em;
+}
+
+button {
+    margin: 0.2em 0.1em;
+}
+
+#patVideos{
+  justify-self:center;
+  margin-top:125px;
+/*   border: 1px solid black; */
+}
+#videos > video{
+  
+}
+
+#localVideo{
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  margin-top: 95px  ! important;
+  margin-right: -95px ! important;
+}
+
+#patPageDiv {
+/*   margin-top: 100px; */
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#patientDirections{
+  justify-self:center;
+/*   border: 1px black solid; */
+  padding: 20px;
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-gap:20px;
+  max-width: 600px;
+  box-shadow: rgba(19, 35, 47, 0.3) 0px 4px 10px 4px;
+  background: rgb(255, 255, 255);
+  padding: 40px;
+  margin: 20px auto;
+  margin-left: 100px;
+  margin-top: 115px;
+  border-radius: 4px;
+}
+
+.command{
+  justify-self: start ! important;
+  font-size: 20px ! important;
+}
+
+#patientDirections > *{
+  justify-self: center;
+}
+
+.outlier{
+  text-align:center;
+  font-size: 13px ! important;
+}
+
+#patTitle{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align:center;
+  font-size: 22px;
+  color: #04c1de;
+  font-weight: bold;
+
+}
+
+#StepTwo {
+  margin-top: 15px;
+}
+

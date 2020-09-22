@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Template Mo">
+    <meta name="author" content="Steve Leke">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
     <title>Sign Up |Melly</title>
@@ -23,6 +23,7 @@
 
     <!-- import the webpage's javascript file -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js" defer></script> 
     <script src="/patientSignUp.js" defer></script>
   </head>
   <body>
@@ -41,7 +42,7 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="#" class="logo">Melly</a>
+                        <a href="index.html" class="logo">Melly</a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
@@ -60,7 +61,7 @@
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
-    
+  <form id="form">
     <div class="form">
       <div class="signup">
           <h1 class="formText">Which topic relates to your issue?</h1>
@@ -80,12 +81,14 @@
             <div class="top-row">
               <div class="field-wrap">
                    <label>First Name<span class="req">*</span> </label>
-                <input type="text" required autocomplete="off" />
+                <input type="text" name="firstName" id="firstName"  autocomplete="off" required/>
+                
+                
               </div>
 
               <div class="field-wrap">
                 <label>Last Name<span class="req">*</span> </label>
-                <input type="text" required autocomplete="off" />
+                <input type="text" name="lastName"  id="lastName"  autocomplete="off" required/>
               </div>
             </div>
 
@@ -96,10 +99,12 @@
                 placeholder="Please give a short description of your issue."
                 cols="50"
                 rows="10"
+                
               ></textarea>
 
-              <button id="button" class="button button-block">
-                <a href="patientStage.html" style= "color:#fff;">Match Me!</a>
+              <button type="submit" id="button" class="button button-block" onclick ="formSubmit">
+<!--                 onclick="formSubmit" -->
+                <span style="color:#fff;">Match Me!</span>
               </button>
               <!--               <input
                 type="text"
@@ -132,7 +137,7 @@
 
             <p class="forgot"><a href="#">Forgot Password?</a></p>
 
-            <button class="button button-block">Log In</button>
+            <button type="submit" class="button button-block">Log In</button>
           </form>
         </div>
       </div>
@@ -140,6 +145,7 @@
     </div>
     <!-- /form -->
     </div>
+</form>
             <!-- jQuery -->
     <script src="temp/assets/js/jquery-2.1.0.min.js"></script>
 
