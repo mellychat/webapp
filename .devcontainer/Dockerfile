@@ -16,13 +16,6 @@ RUN apt-get update && apt-get install -y \
         curl \
         net-tools \
         apt-transport-https \
-        ca-certificates; \
-    CLOUD_SDK_REPO="cloud-sdk-$(grep VERSION_CODENAME /etc/os-release | cut -d '=' -f 2)" &&\
-    echo "deb https://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list &&\
-    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -; \
-    apt-get update && apt-get install -y \
-        google-cloud-sdk \
-        google-cloud-sdk-cloud-build-local &&\
-    gcloud config set project request-a-dance
-    
+        ca-certificates; 
+
 EXPOSE 5000 5001 9005
