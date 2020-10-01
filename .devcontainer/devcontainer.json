@@ -39,13 +39,18 @@
 	// "postCreateCommand": "apt-get update && apt-get install -y git",
 
 	// Add the IDs of extensions you want installed when the container is created in the array below.
+	// It's probably a good idea to keep this up to date with extensions.json as well. Please keep sorted.
 	"extensions": [
-		"dbaeumer.vscode-eslint",
-		"xabikos.JavaScriptSnippets", 
 		"christian-kohler.npm-intellisense",
-		"msjsdiag.debugger-for-chrome",
+		"dbaeumer.vscode-eslint",
 		"huizhou.githd",
 		"johnpapa.vscode-peacock",
-		"mfery.gitexplorer"
+		"mfery.gitexplorer",
+		"msjsdiag.debugger-for-chrome",
+		"xabikos.JavaScriptSnippets", 
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "ms-vsliveshare.vsliveshare",
+        "ms-vsliveshare.vsliveshare-audio",
+        "ms-vsliveshare.vsliveshare-pack",
 	]
 }
