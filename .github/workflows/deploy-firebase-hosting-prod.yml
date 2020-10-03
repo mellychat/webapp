@@ -1,9 +1,9 @@
 name: Build and Deploy to Firebase Hosting (Weekly)
 on:
-schedule:
-    # * is a special character in YAML so you have to quote this string
-    #- cron:  '* 8 * * 1' # On Mondays kick off a deploy to hosting.
-    - cron:  '0/15 * * * *' # Run every 15m for testing. 
+  schedule:
+      # * is a special character in YAML so you have to quote this string
+      #- cron:  '* 8 * * 1' # On Mondays kick off a deploy to hosting.
+      - cron:  '0/15 * * * *' # Run every 15m for testing. 
       
 jobs:
   build:
