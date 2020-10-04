@@ -2,8 +2,8 @@ name: Build and Deploy to Firebase Hosting (Nightly)
 on:
   schedule:
       # * is a special character in YAML so you have to quote this string
-      # - cron:  '0 23 * * *' # Nightly at 11pm kick off a deploy to hosting.
-      - cron:  '0/5 * * * *' # Run every 5m for testing. 
+      # Deploy at 11PM PT. Note that GitHub Actions cron timespec is in UTC.
+      - cron:  '0 6 * * *' 
       
 jobs:
   deploy:
