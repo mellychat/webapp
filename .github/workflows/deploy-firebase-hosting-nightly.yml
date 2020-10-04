@@ -1,0 +1,45 @@
+name: Build and Deploy to Firebase Hosting (Nightly)
+on:
+  schedule:
+      # * is a special character in YAML so you have to quote this string
+      # - cron:  '0 23 * * *' # Nightly at 11pm kick off a deploy to hosting.
+      - cron:  '0/15 * * * *' # Run every 15m for testing. 
+      
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+        with:
+          token: ${{ secrets.READ_ONLY_GITHUB_TOKEN }}
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build-prod
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: dist
+          path: dist
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+        with:
+          token: ${{ secrets.READ_ONLY_GITHUB_TOKEN }}
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          name: dist
+          path: dist
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting -P nightly
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
