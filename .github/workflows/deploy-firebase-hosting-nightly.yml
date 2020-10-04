@@ -14,11 +14,6 @@ jobs:
         uses: actions/checkout@master
         with:
           token: ${{ secrets.READ_ONLY_GITHUB_TOKEN }}
-      - name: Download Artifact
-        uses: actions/download-artifact@master
-        with:
-          name: dist
-          path: dist
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
