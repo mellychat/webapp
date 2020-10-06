@@ -3,7 +3,7 @@ on:
   schedule:
       # * is a special character in YAML so you have to quote this string
       # Deploy Mondays at 8AM PT. Note that GitHub Actions cron timespec is in UTC.
-      - cron:  '* 15 * * 1' 
+      - cron:  '0 15 * * 1' 
       
 jobs:
   deploy:
