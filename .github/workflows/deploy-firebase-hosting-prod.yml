@@ -1,0 +1,22 @@
+name: Build and Deploy to Firebase Hosting (Weekly)
+on:
+  schedule:
+      # * is a special character in YAML so you have to quote this string
+      # Deploy Mondays at 8AM PT. Note that GitHub Actions cron timespec is in UTC.
+      - cron:  '0 15 * * 1' 
+      
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+        with:
+          token: ${{ secrets.READ_ONLY_GITHUB_TOKEN }}
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting -P prod 
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
