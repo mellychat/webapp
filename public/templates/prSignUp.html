@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-   <meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Steve Leke">
+    <meta name="author" content="Template Mo">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
     <title>Sign Up |Melly</title>
@@ -13,21 +13,20 @@
 
 
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/public/assets/css/patientSignUp.css" />
     <link rel="stylesheet" href="/public/assets/css/prSignUp.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/templatemo-art-factory.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/owl-carousel.css">
 
-
     <!-- import the webpage's javascript file -->
+    <script src="/scripts/prSignUp.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js" defer></script> 
-    <script src="/scripts/patientSignUp.js" defer></script>
   </head>
   <body>
-      <div id="preloader">
+    
+        <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
         <div class="jumper">
             <div></div>
             <div></div>
@@ -61,68 +60,65 @@
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
-  <form id="form">
-    <div class="form">
-      <div class="signup">
-          <h1 class="formText">Which topic relates to your issue?</h1>
+    
+     <div class="form">
       <ul class="tab-group">
-        <li class="tab active"><a href="#physical">Physical Health</a></li>
-        <li class="tab"><a href="#mental">Mental Health</a></li>
-        <li class="tab"><a href="#emotional">Emotional Health</a></li>
-        <li class="tab"><a href="#talk">Spiritual Health</a></li>
-<!--         <li class="tab"><a id="talk" href="#talk">Talk to Professional</a></li> -->
+        <li class="tab active"><a href="#signup">Sign Up</a></li>
+        <li class="tab"><a href="#login">Log In</a></li>
       </ul>
 
       <div class="tab-content">
-        <div class="signup">
-          <h1 class="formText">Fill The Form To Get Matched!</h1>
+        <div id="signup">
+          <h1 id="signupText">Sign Up for Free</h1>
 
-          <form action="/" method="post">
+          <form id="signUp" action="/" method="post">
             <div class="top-row">
               <div class="field-wrap">
-                   <label>First Name<span class="req">*</span> </label>
-                <input type="text" name="firstName" id="firstName"  autocomplete="off" required/>
-                
-                
+                <label> First Name<span class="req">*</span> </label>
+                <input name="firstName" type="text"  autocomplete="off" required>
               </div>
 
               <div class="field-wrap">
-                <label>Last Name<span class="req">*</span> </label>
-                <input type="text" name="lastName"  id="lastName"  autocomplete="off" required/>
+                <label> Last Name<span class="req">*</span> </label>
+                <input name="lastName" type="text" autocomplete="off" required>
               </div>
             </div>
 
             <div class="field-wrap">
-              <textarea
-                id="textArea"
-                name="paragraph_text"
-                placeholder="Please give a short description of your issue."
-                cols="50"
-                rows="10"
-                
-              ></textarea>
-
-              <button type="submit" id="button" class="button button-block" onclick ="formSubmit">
-<!--                 onclick="formSubmit" -->
-                <span style="color:#fff;">Match Me!</span>
-              </button>
-              <!--               <input
-                type="text"
-                placeholder="If you feel comfortable, please give a short description of what you're seeking help with."
-              /> -->
+              <label> Email Address<span class="req">*</span> </label>
+              <input name="email" type="email" autocomplete="off" required>
             </div>
 
-            <!--           <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div> -->
+            <div class="field-wrap">
+              <label> Password<span class="req">*</span> </label>
+              <input name="password" type="password" autocomplete="off" required>
+            </div>
+            
+            <div class="field-wrap">
+              <label> Physical Address<span class="req">*</span> </label>
+              <input name="address"  autocomplete="off" required>
+            </div>
+            
+            <div class="field-wrap">
+              <label> Phone Number<span class="req">*</span> </label>
+              <input name="phoneNumber" type="tel"  autocomplete="off" required>
+            </div>
+            
+            <div class="field-wrap">
+<!--               <label for="file">Select a file:</label> -->
+              <h2 id="fileText"> Upload a PDF containing photocopies of your resume, degrees, and medical licenses. <span class="req">*</span> </h2>
+              <input type="file" id = "file" autocomplete="off"  name="filename" required>
+            </div>
+
+
+            <button  type="submit" class="button button-block">
+              <a href="finesse_match.html" style= "color:#fff;">Get Started!</a>
+            </button>
           </form>
         </div>
 
         <div id="login">
-          <h1>Welcome Back!</h1>
+          <h1 id="welcomeBack">Welcome Back!</h1>
 
           <form action="/" method="post">
             <div class="field-wrap">
@@ -134,19 +130,18 @@
               <label> Password<span class="req">*</span> </label>
               <input type="password" required autocomplete="off" />
             </div>
-
             <p class="forgot"><a href="#">Forgot Password?</a></p>
 
-            <button type="submit" class="button button-block">Log In</button>
+               <button  type="submit" class="button button-block">
+              <a href="https://hackathonv4.glitch.me/FirebaseRTC/public/prWaitingRoom.html" style= "color:#fff;">Log In!</a>
+            </button>
           </form>
         </div>
       </div>
       <!-- tab-content -->
     </div>
     <!-- /form -->
-    </div>
-</form>
-            <!-- jQuery -->
+        <!-- jQuery -->
     <script src="/assets/js/jquery-2.1.0.min.js"></script>
 
     <!-- Bootstrap -->
@@ -158,7 +153,7 @@
     <script src="/assets/js/scrollreveal.min.js"></script>
     <script src="/assets/js/waypoints.min.js"></script>
     <script src="/assets/js/jquery.counterup.min.js"></script>
-    <script src="/assets/js/imgfix.min.js"></script>
+    <script src="/assets/js/imgfix.min.js"></script> 
     
     <!-- Global Init -->
     <script src="/assets/js/custom.js"></script>
