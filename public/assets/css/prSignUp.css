@@ -48,22 +48,22 @@ html {
   overflow-y: scroll;
 }
 body {
-  background:  #04c1de;
+  background: #04c1de;
   font-family: "Titillium Web", sans-serif;
 }
 a {
   text-decoration: none;
-  color: #fff !important;
+  color: #04c1de; ! important
   transition: 0.5s ease;
 }
 a:hover {
-  color: #179b77;
+  color: #03AFC8; ! important
 }
 .form {
-  background: #FFF;
+  background: #fff;
   padding: 40px;
   max-width: 600px;
-  margin: 40px auto;
+  margin: 150px auto;
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
@@ -91,7 +91,7 @@ a:hover {
   transition: 0.5s ease;
 }
 .tab-group li a:hover {
-  background: #04c1de;
+  background: #03AFC8;
   color: #fff;
 }
 .tab-group .active a {
@@ -107,49 +107,48 @@ h1 {
   font-weight: 300;
   margin: 0 0 40px;
 }
+#signupText{
+  color: #04c1de;
+  margin-bottom: 30px; ! important
+}
 label {
   position: absolute;
   transform: translateY(6px);
   left: 13px;
-  color: rgba(255, 255, 255, 0.5);
+  color: #c1bdba;
   transition: all 0.25s ease;
-  -webkit-transform: translate3d(0,0,0);
-  /* Git told me to edit line 118. It orginally was (-webkit-backface-visibility: hidden;) I addd line 119 to fix these changese  */
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   pointer-events: none;
-  font-size: 22px;
+  font-size: 14px;
 }
 label .req {
   margin: 2px;
   color: #04c1de;
 }
 label.active {
-  transform: translateY(50px);
-  left: 2px;
-  font-size: 14px;
+  transform: translateY(30px); ! important 
+  transform: translateX(-10px);
+  left: 0px;! important
+  font-size: 14px;! important
+  color: #04c1de; ! important
 }
 label.active .req {
   opacity: 0;
 }
 label.highlight {
-  color: #fff;
-}
-.formText{
-  font-size: 30px;
-  margin-bottom: 25px;
+  color: #04c1de; ! important
 }
 input,
 textarea {
   font-size: 22px;
   display: block;
-  width: 100%;
-  height: 100%;
-  padding: 5px 10px;
+  width: 100%; ! important
+  height: 175px; ! important
+  padding: 5px 10px; ! important
   background: none;
   background-image: none;
   border: 1px solid #a0b3b0;
-  color: #fff;
+  color: #000;
   border-radius: 0;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
@@ -180,7 +179,6 @@ textarea {
   margin: 0;
 }
 .button {
-  margin-top: 50px;
   border: 0;
   outline: none;
   border-radius: 0;
@@ -190,7 +188,7 @@ textarea {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   background: #04c1de;
-  color: #fff;
+  color: #fff; ! important
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
@@ -204,18 +202,21 @@ textarea {
 }
 .forgot {
   margin-top: -20px;
+  margin-bottom: 15px;
   text-align: right;
+  color:#04c1de; ! important
 }
 
-#talk{
-  width:100%;
+#fileText {
+  font-size: 12px;
+  color: #c1bdba;
 }
 
-#textArea{
-  font-family: "Titillium Web", sans-serif;
+#fileText .req {
+  color: #04c1de;
 }
 
-#matchButton{
-   /* not sure if this is the right thing. */
-  background-color:rgba(19, 35, 47, 0.9);
-};
+#welcomeBack {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
