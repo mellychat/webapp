@@ -53,11 +53,11 @@ body {
 }
 a {
   text-decoration: none;
-  color: #04c1de; ! important
+  color: #04c1de ! important; 
   transition: 0.5s ease;
 }
 a:hover {
-  color: #03AFC8; ! important
+  color: #03AFC8 ! important; 
 }
 .form {
   background: #fff;
