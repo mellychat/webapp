@@ -66,7 +66,7 @@ function formSubmit() {
 }
 
 if(formSubmit()) {
-    window.location = "/FirebaseRTC/public/patWaitingRoom.html";      
+    window.location = "/templatespublic/patWaitingRoom.html";      
 // function redirect() {
 //        // need some work
 //       // So far as long as one of the inputs is greater than 0, the form moves along. You get the url if there's valuese in both of th. inputs
@@ -78,7 +78,7 @@ if(formSubmit()) {
 //        var total3 = total;
 //        if (total3 > 1) {  
 //                 alert(total2);
-//                 window.location = "/FirebaseRTC/public/patWaitingRoom.html";      
+//                 window.location = "/templatespublic/patWaitingRoom.html";      
 //        }
 //        else {
 //        }
@@ -101,7 +101,7 @@ if(formSubmit()) {
 //     }
 //     if (i > 1) {  
 //         alert('Is Working');
-//         window.location = "https://hackathonv4.glitch.me/FirebaseRTC/public/patWaitingRoom.html";      
+//         window.location = "https://hackathonv4.glitch.me/public/templates/patWaitingRoom.html";      
 //        }
 //      });
 //   });
