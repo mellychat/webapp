@@ -2,6 +2,7 @@
   "projects": {
     "dev": "mellychat-dev",
     "nightly": "mellychat-nightly-10f3b",
-    "prod": "mellychat-prod-78ca4"
+    "prod": "mellychat-prod-78ca4",
+    "default": "mellychat-dev"
   }
 }
