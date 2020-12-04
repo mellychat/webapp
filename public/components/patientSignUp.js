@@ -101,7 +101,7 @@ if(formSubmit()) {
 //     }
 //     if (i > 1) {  
 //         alert('Is Working');
-//         window.location = "https://hackathonv4.glitch.me/public/templates/patWaitingRoom.html";      
+//         window.location = "https://hackathonv4.glitch.me/FirebaseRTC/public/patWaitingRoom.html";      
 //        }
 //      });
 //   });
