@@ -1,109 +1,282 @@
 <!DOCTYPE html>
 <!--Don't change this file's name-->
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Template Mo">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<!--     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"> -->
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="Template Mo" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <!--     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"> -->
     <title>Review | Melly</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.glitch.com/aa3eaa29-7183-4f33-b4e2-c3a30c833a25%2F31540120.jpg?v=1598133005255"/>  
-  
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://cdn.glitch.com/aa3eaa29-7183-4f33-b4e2-c3a30c833a25%2F31540120.jpg?v=1598133005255"
+    />
+
     <!--     Firebase Web RTC  -->
-<!--     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> -->
-      <!-- update the version number as needed -->
+    <!--     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> -->
+    <!-- update the version number as needed -->
     <script defer src="/__/firebase/7.13.1/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
     <script defer src="/__/firebase/7.13.1/firebase-firestore.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script> 
-    <script src="https://kit.fontawesome.com/55c645bbbf.js" crossorigin="anonymous"></script>
+    <script defer src="/__/firebase/init.js"></script>
+    <script
+      src="https://kit.fontawesome.com/55c645bbbf.js"
+      crossorigin="anonymous"
+    ></script>
 
-
-    
-    <link rel="stylesheet" type="text/css" href="/public/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/public/assets/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="/public/assets/css/templatemo-art-factory.css">
-    <link rel="stylesheet" type="text/css" href="/public/assets/css/owl-carousel.css">
-    <link rel="stylesheet" href="starability-all.min.css">
-    <link rel="stylesheet" type="text/css" href="/public/assets/css/reviewPage.css">
-   
-</head>
-<body>
-<div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/css/font-awesome.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/css/templatemo-art-factory.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/css/owl-carousel.css"
+    />
+    <link rel="stylesheet" href="starability-all.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/css/reviewPage.css"
+    />
+  </head>
+  <body>
+    <div id="preloader">
+      <div class="jumper">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
     <!-- ***** Preloader End ***** -->
-  <!-- ***** Header Area Start ***** -->
+    <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
-                        <a href="/public/templates/index.html" class="logo">Melly</a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <li class="scroll-to-section"><a href="/public/templates/index.html" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="/public/templates/index.html#about">About</a></li>
-                            <li class="scroll-to-section"><a href="/public/templates/index.html#services">Resources</a></li>
-                            <li class="scroll-to-section"><a href="/public/templates/index.html#contact-us">Contact Us</a></li>
-                        </ul>
-                        <a class="menu-trigger">
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="main-nav">
+              <!-- ***** Logo Start ***** -->
+              <a href="/templates/index.html" class="logo">Melly</a>
+              <!-- ***** Logo End ***** -->
+              <!-- ***** Menu Start ***** -->
+              <ul class="nav">
+                <li class="scroll-to-section">
+                  <a href="/templates/index.html" class="active">Home</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="/templates/index.html#about">About</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="/templates/index.html#services">Resources</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="/templates/index.html#contact-us"
+                    >Contact Us</a>
+                </li>
+              </ul>
+              <a class="menu-trigger">
+                <span>Menu</span>
+              </a>
+              <!-- ***** Menu End ***** -->
+            </nav>
+          </div>
         </div>
+      </div>
     </header>
- <div id="pageDiv">
-   <form>
-    <div id="call">
-    <h1>How did you enjoy the call?</h1>
-        <fieldset class="rating">
-        <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-        <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-        <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-        <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-        <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-        <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-        <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-        <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-        <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-        <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-        </fieldset>
-    </div> 
-    <div id="pr">
-    <h1>How did you enjoy your practitioner?</h1>
-      <fieldset class="rating2">
-        <input type="radio" id="2star5" name="rating2" value="5" /><label class = "full" for="2star5" title="Awesome - 5 stars"></label>
-        <input type="radio" id="2star4half" name="rating2" value="4 and a half" /><label class="half" for="2star4half" title="Pretty good - 4.5 stars"></label>
-        <input type="radio" id="2star4" name="rating2" value="4" /><label class = "full" for="2star4" title="Pretty good - 4 stars"></label>
-        <input type="radio" id="2star3half" name="rating2" value="3 and a half" /><label class="half" for="2star3half" title="Meh - 3.5 stars"></label>
-        <input type="radio" id="2star3" name="rating2" value="3" /><label class = "full" for="2star3" title="Meh - 3 stars"></label>
-        <input type="radio" id="2star2half" name="rating2" value="2 and a half" /><label class="half" for="2star2half" title="Kinda bad - 2.5 stars"></label>
-        <input type="radio" id="2star2" name="rating2" value="2" /><label class = "full" for="2star2" title="Kinda bad - 2 stars"></label>
-        <input type="radio" id="2star1half" name="rating2" value="1 and a half" /><label class="half" for="2star1half" title="Meh - 1.5 stars"></label>
-        <input type="radio" id="2star1" name="rating2" value="1" /><label class = "full" for="2star1" title="Sucks big time - 1 star"></label>
-        <input type="radio" id="2starhalf" name="rating2" value="half" /><label class="half" for="2starhalf" title="Sucks big time - 0.5 stars"></label>
-    </fieldset>
-  </div>
-<!--     <a href="/public/templates/index.html"> -->
-    <button id="createRoom" class="stage-btn" onclick="location.href='/public/templates/index.html'">
-      Return Home
-      </button> 
-<!--     </a> -->
-</form>
-<!--      <h5>For Practioners:</h5>
+    <div id="pageDiv">
+      <form>
+        <div id="call">
+          <h1>How did you enjoy the call?</h1>
+          <fieldset class="rating">
+            <input type="radio" id="star5" name="rating" value="5" /><label
+              class="full"
+              for="star5"
+              title="Awesome - 5 stars"
+            ></label>
+            <input
+              type="radio"
+              id="star4half"
+              name="rating"
+              value="4 and a half"
+            /><label
+              class="half"
+              for="star4half"
+              title="Pretty good - 4.5 stars"
+            ></label>
+            <input type="radio" id="star4" name="rating" value="4" /><label
+              class="full"
+              for="star4"
+              title="Pretty good - 4 stars"
+            ></label>
+            <input
+              type="radio"
+              id="star3half"
+              name="rating"
+              value="3 and a half"
+            /><label
+              class="half"
+              for="star3half"
+              title="Meh - 3.5 stars"
+            ></label>
+            <input type="radio" id="star3" name="rating" value="3" /><label
+              class="full"
+              for="star3"
+              title="Meh - 3 stars"
+            ></label>
+            <input
+              type="radio"
+              id="star2half"
+              name="rating"
+              value="2 and a half"
+            /><label
+              class="half"
+              for="star2half"
+              title="Kinda bad - 2.5 stars"
+            ></label>
+            <input type="radio" id="star2" name="rating" value="2" /><label
+              class="full"
+              for="star2"
+              title="Kinda bad - 2 stars"
+            ></label>
+            <input
+              type="radio"
+              id="star1half"
+              name="rating"
+              value="1 and a half"
+            /><label
+              class="half"
+              for="star1half"
+              title="Meh - 1.5 stars"
+            ></label>
+            <input type="radio" id="star1" name="rating" value="1" /><label
+              class="full"
+              for="star1"
+              title="Sucks big time - 1 star"
+            ></label>
+            <input
+              type="radio"
+              id="starhalf"
+              name="rating"
+              value="half"
+            /><label
+              class="half"
+              for="starhalf"
+              title="Sucks big time - 0.5 stars"
+            ></label>
+          </fieldset>
+        </div>
+        <div id="pr">
+          <h1>How did you enjoy your practitioner?</h1>
+          <fieldset class="rating2">
+            <input type="radio" id="2star5" name="rating2" value="5" /><label
+              class="full"
+              for="2star5"
+              title="Awesome - 5 stars"
+            ></label>
+            <input
+              type="radio"
+              id="2star4half"
+              name="rating2"
+              value="4 and a half"
+            /><label
+              class="half"
+              for="2star4half"
+              title="Pretty good - 4.5 stars"
+            ></label>
+            <input type="radio" id="2star4" name="rating2" value="4" /><label
+              class="full"
+              for="2star4"
+              title="Pretty good - 4 stars"
+            ></label>
+            <input
+              type="radio"
+              id="2star3half"
+              name="rating2"
+              value="3 and a half"
+            /><label
+              class="half"
+              for="2star3half"
+              title="Meh - 3.5 stars"
+            ></label>
+            <input type="radio" id="2star3" name="rating2" value="3" /><label
+              class="full"
+              for="2star3"
+              title="Meh - 3 stars"
+            ></label>
+            <input
+              type="radio"
+              id="2star2half"
+              name="rating2"
+              value="2 and a half"
+            /><label
+              class="half"
+              for="2star2half"
+              title="Kinda bad - 2.5 stars"
+            ></label>
+            <input type="radio" id="2star2" name="rating2" value="2" /><label
+              class="full"
+              for="2star2"
+              title="Kinda bad - 2 stars"
+            ></label>
+            <input
+              type="radio"
+              id="2star1half"
+              name="rating2"
+              value="1 and a half"
+            /><label
+              class="half"
+              for="2star1half"
+              title="Meh - 1.5 stars"
+            ></label>
+            <input type="radio" id="2star1" name="rating2" value="1" /><label
+              class="full"
+              for="2star1"
+              title="Sucks big time - 1 star"
+            ></label>
+            <input
+              type="radio"
+              id="2starhalf"
+              name="rating2"
+              value="half"
+            /><label
+              class="half"
+              for="2starhalf"
+              title="Sucks big time - 0.5 stars"
+            ></label>
+          </fieldset>
+        </div>
+        <!--     <a href="/templates/index.html"> -->
+        <button
+          id="createRoom"
+          class="stage-btn"
+          onclick="location.href='/templates/index.html'"
+        >
+          Return Home
+        </button>
+        <!--     </a> -->
+      </form>
+      <!--      <h5>For Practioners:</h5>
    
      <div class="rating">
       <input type="radio" name="star" id="star1" value="1"><label for="star1"></label>
@@ -112,8 +285,8 @@
       <input type="radio" name="star" id="star4" value="4"><label for="star4"></label>
       <input type="radio" name="star" id="star5" value="5"><label for="star5"></label>
     </div> -->
-   
-<!--      <div class="txt-center">
+
+      <!--      <div class="txt-center">
     <form>
         <div class="rating">
             <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
@@ -130,8 +303,8 @@
         </div>
     </form>
 </div> -->
-   
-<!--      <form class="rating">
+
+      <!--      <form class="rating">
         <label>
             <input type="radio" name="stars" value="1" />
             <span class="icon">★</span>
@@ -163,25 +336,23 @@
             <span class="icon">★</span>
         </label>
   </form> -->
-  </div>
-<script src="/public/components/firebase.js"></script>
+    </div>
+    <script src="/components/firebase.js"></script>
     <!-- jQuery -->
-    <script src="/public/assets/js/jquery-2.1.0.min.js"></script>
+    <script src="/assets/js/jquery-2.1.0.min.js"></script>
 
     <!-- Bootstrap -->
-    <script src="/public/assets/js/popper.js"></script>
-    <script src="/public/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/popper.js" ></script>
+    <script src="/assets/js/bootstrap.min.js" type="application/json"></script>
 
     <!-- Plugins -->
-    <script src="/public/assets/js/owl-carousel.js"></script>
-    <script src="/public/assets/js/scrollreveal.min.js"></script>
-    <script src="/public/assets/js/waypoints.min.js"></script>
-    <script src="/public/assets/js/jquery.counterup.min.js"></script>
-    <script src="/public/assets/js/imgfix.min.js"></script> 
-    
+    <script src="/assets/js/owl-carousel.js"></script>
+    <script src="/assets/js/scrollreveal.min.js"></script>
+    <script src="/assets/js/waypoints.min.js"></script>
+    <script src="/assets/js/jquery.counterup.min.js"></script>
+    <script src="/assets/js/imgfix.min.js"></script>
+
     <!-- Global Init -->
-    <script src="/public/assets/js/custom.js"></script>
-
-
-</body>
+    <script src="/assets/js/custom.js"></script>
+  </body>
 </html>
