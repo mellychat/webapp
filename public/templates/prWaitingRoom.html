@@ -21,7 +21,7 @@
     <script defer src="/__/firebase/init.js"></script> 
 
      <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/assets/css/firebase.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/prWaitingRoom.css">
      <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/templatemo-art-factory.css">
@@ -62,18 +62,42 @@
             </div>
         </div>
     </header>
- <div id="pageDiv">
-<h1 class="matchHeader">Welcome to Melly!</h1>
-<!-- <div id="buttons">
+  
+<h1 id="title">Read Patient Notes, then Join The Meeting!</h1>
+<div id="pageDiv">
+  
+  <div id="prMain">
+      <h1 class="heading">
+        Join To Meet:
+        <p class="patientInfo" id="patientName">
+        <span>John Doe</span>
+        </p>
+      </h1>
+     
+      <h1 class="heading">
+        Issue: 
+        <p class="patientInfo" id="issueName">Physical Health</p>
+      </h1>
+      
+      <h1 class="heading">Description:
+        <p class="patientInfo" id="description">I've been experiencing extreme fatigue lately :( </p>
+      </h1>
+  </div>
+<!--   <div>
+      <span id="currentRoom"></span>
+  </div> -->
+  <div id="videos">
+      <video id="localVideo" muted autoplay playsinline></video>
+      <video hidden id="remoteVideo" autoplay playsinline></video>
     <button class="main-button-slider mdc-button mdc-button--raised"  id="cameraBtn">
         <i class="material-icons mdc-button__icon" aria-hidden="true">perm_camera_mic</i>
         <span class="mdc-button__label">Open camera & microphone</span>
     </button>
-    <button     class="mdc-button mdc-button--raised " disabled id="createBtn">
+    <button hidden   class="mdc-button mdc-button--raised " disabled id="createBtn">
         <i      class="material-icons mdc-button__icon" aria-hidden="true">group_add</i>
         <span   class="mdc-button__label">Create room</span>
     </button>
-    <button     class="mdc-button mdc-button--raised" disabled id="matchMe">
+    <button  hidden   class="mdc-button mdc-button--raised" disabled id="matchMe">
         <i      class="material-icons mdc-button__icon" aria-hidden="true">group_add</i>
         <span   class="mdc-button__label">Match Me</span>
     </button>
@@ -82,42 +106,24 @@
         <span class="mdc-button__label">Join room</span>
     </button>
     
-       <button class="mdc-button mdc-button--raised" disabled id="hangupBtn">
+       <button hidden class="mdc-button mdc-button--raised" disabled id="hangupBtn">
         <i  class="material-icons mdc-button__icon" aria-hidden="true">close</i>
         <span  class="mdc-button__label">Hangup</span>
     </button>
-</div> -->
-<div>
-    <span id="currentRoom"></span>
+<!--       <button class="main-button-slider mdc-button mdc-button--raised"  id="cameraBtn">
+          <i class="material-icons mdc-button__icon" aria-hidden="true">perm_camera_mic</i>
+          <span class="mdc-button__label">Open camera & microphone</span>
+      </button>
+      <button class="mdc-button mdc-button--raised" disabled id="joinBtn">
+          <i class="material-icons mdc-button__icon" aria-hidden="true">group</i>
+          <span class="mdc-button__label">Join room</span>
+      </button> -->
+  </div>
+  
 </div>
-<div id="videos">
-    <video  id="localVideo" size ="480px" muted autoplay playsinline></video>
-    <video  id="remoteVideo" autoplay playsinline></video>
-</div>
-   <div id="buttons">
-    <button class="main-button-slider mdc-button mdc-button--raised"  id="cameraBtn">
-        <i class="material-icons mdc-button__icon" aria-hidden="true">perm_camera_mic</i>
-        <span class="mdc-button__label">Open camera & microphone</span>
-    </button>
-    <button  hidden class="mdc-button mdc-button--raised " disabled id="createBtn">
-        <i      class="material-icons mdc-button__icon" aria-hidden="true">group_add</i>
-        <span   class="mdc-button__label">Create room</span>
-    </button>
-    <button  hidden   class="mdc-button mdc-button--raised" disabled id="matchMe">
-        <i      class="material-icons mdc-button__icon" aria-hidden="true">group_add</i>
-        <span   class="mdc-button__label">Match Me</span>
-    </button>
-    <button hidden class="mdc-button mdc-button--raised" disabled id="joinBtn">
-        <i class="material-icons mdc-button__icon" aria-hidden="true">group</i>
-        <span class="mdc-button__label">Join room</span>
-    </button>
-    
-       <button class="mdc-button mdc-button--raised" disabled id="hangupBtn">
-        <i  class="material-icons mdc-button__icon" aria-hidden="true">close</i>
-        <span  class="mdc-button__label">Hangup</span>
-    </button>
-</div>
-</div> 
+
+  
+  
 <div class="mdc-dialog"
      id="room-dialog"
      role="alertdialog"
@@ -148,7 +154,7 @@
     </div>
     <div class="mdc-dialog__scrim"></div>
 </div>
-<script src="/components/firebase/app.js"></script>
+<script src="/components/firebase.js"></script>
     <!-- jQuery -->
     <script src="/assets/js/jquery-2.1.0.min.js"></script>
 
@@ -169,5 +175,3 @@
 
 </body>
 </html>
-
-
