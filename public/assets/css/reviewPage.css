@@ -1,37 +1,7 @@
 #pageDiv {
   margin-top: 100px;
 }
-/* 
-.rating { 
-  position: absolute  ! important;
-  top: 50% ! important;
-  left: 50% ! important;
-  transform: translate(-50%, -50%)  ! important;
-  display: flex ! important;
-}
 
-/* .rating. input {
-  display: none;
-} */
-
-/* .rating label {
-  display: block ! important; 
-  cursor: pointer ! important; 
-  width: 50px ! important; 
-  background: #ccc ! important; 
-  padding-left: 10px ! important; 
-}
-
-.rating label ::before {
-  content: '/f005' ! important;
-  font-family: 'Font Awesome 5 Free' ! important;
-  font-weight: 900 ! important;
-  position: relative ! important;
-  display: block ! important;
-  font-size: 50px ! important;
-  color: #1d1c1c ! important;
-  
-} */ 
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
@@ -113,17 +83,17 @@ h1 { font-size: 1.5em; margin: 10px; }
 .rating2 > label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating2 > input:checked ~ label:hover ~ label { color: #03AFC8;  } 
 
+/***** CSS Magic For The Positioning Of The Two Questions *****/
 #call{
   margin-top: 12%;
   margin-left: 32%;
-  
 }
 
 #pr{
   margin-top: 17%;
   margin-left: 32%;
 }
-
+/***** CSS Magic For The Return Home Button *****/
 .stage-btn{
   color:white;
   text-transform: uppercase;

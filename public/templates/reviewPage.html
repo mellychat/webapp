@@ -33,7 +33,7 @@
       src="https://kit.fontawesome.com/55c645bbbf.js"
       crossorigin="anonymous"
     ></script>
-
+    <!-- Loads All Neccessay CSS Pages -->
     <link
       rel="stylesheet"
       type="text/css"
@@ -62,6 +62,7 @@
     />
   </head>
   <body>
+    <!-- ***** Preloader Start (The Loading Animation w/ Blue Background)***** -->
     <div id="preloader">
       <div class="jumper">
         <div></div>
@@ -104,8 +105,10 @@
         </div>
       </div>
     </header>
+       <!-- ***** Form Starts ***** -->
     <div id="pageDiv">
       <form>
+      <!-- ***** Text / First Set of 5 stars (Start) ***** -->
         <div id="call">
           <h1>How did you enjoy the call?</h1>
           <fieldset class="rating">
@@ -186,6 +189,8 @@
             ></label>
           </fieldset>
         </div>
+        <!-- ***** Text / First Set of 5 stars (End) ***** -->
+       <!-- ***** Text / Second Set of 5 stars (Start) ***** -->
         <div id="pr">
           <h1>How did you enjoy your practitioner?</h1>
           <fieldset class="rating2">
@@ -266,76 +271,19 @@
             ></label>
           </fieldset>
         </div>
-        <!--     <a href="/templates/index.html"> -->
+        <!-- ***** Text / Second Set of 5 stars (End) ***** -->
+        <!-- ***** Code For The Return Home Button Start 
+          (OnClick Funtion Doesn't Work Yet) ***** -->
         <button
           id="createRoom"
           class="stage-btn"
-          onclick="location.href='/templates/index.html'"
+          onclick="location.href='/templates/index.html'" 
         >
           Return Home
         </button>
-        <!--     </a> -->
+        <!-- ***** Code For The Return Home Button End ***** -->
       </form>
-      <!--      <h5>For Practioners:</h5>
-   
-     <div class="rating">
-      <input type="radio" name="star" id="star1" value="1"><label for="star1"></label>
-      <input type="radio" name="star" id="star2" value="2"><label for="star2"></label>
-      <input type="radio" name="star" id="star3" value="3"><label for="star3"></label>
-      <input type="radio" name="star" id="star4" value="4"><label for="star4"></label>
-      <input type="radio" name="star" id="star5" value="5"><label for="star5"></label>
-    </div> -->
-
-      <!--      <div class="txt-center">
-    <form>
-        <div class="rating">
-            <input id="star5" name="star" type="radio" value="5" class="radio-btn hide" />
-            <label for="star5">☆</label>
-            <input id="star4" name="star" type="radio" value="4" class="radio-btn hide" />
-            <label for="star4">☆</label>
-            <input id="star3" name="star" type="radio" value="3" class="radio-btn hide" />
-            <label for="star3">☆</label>
-            <input id="star2" name="star" type="radio" value="2" class="radio-btn hide" />
-            <label for="star2">☆</label>
-            <input id="star1" name="star" type="radio" value="1" class="radio-btn hide" />
-            <label for="star1">☆</label>
-            <div class="clear"></div>
-        </div>
-    </form>
-</div> -->
-
-      <!--      <form class="rating">
-        <label>
-            <input type="radio" name="stars" value="1" />
-            <span class="icon">★</span>
-        </label>
-        <label>
-            <input type="radio" name="stars" value="2" />
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-        </label>
-        <label>
-            <input type="radio" name="stars" value="3" />
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>   
-        </label>
-        <label>
-            <input type="radio" name="stars" value="4" />
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-        </label>
-        <label>
-            <input type="radio" name="stars" value="5" />
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-        </label>
-  </form> -->
+  <!-- ***** Form Ends ***** --
     </div>
     <script src="/components/firebase.js"></script>
     <!-- jQuery -->
