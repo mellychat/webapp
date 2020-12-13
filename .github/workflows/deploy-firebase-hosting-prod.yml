@@ -1,22 +1,26 @@
+# Documentation: https://github.com/mellychat/webapp/blob/mainline/docs/firebase.md#firebase-project-setup
 name: Build and Deploy to Firebase Hosting (Weekly)
+
 on:
   schedule:
-      # * is a special character in YAML so you have to quote this string
-      # Deploy Mondays at 8AM PT. Note that GitHub Actions cron timespec is in UTC.
-      - cron:  '0 15 * * 1' 
-      
+    # * is a special character in YAML so you have to quote this string
+    # Deploy Mondays at 8AM PT. Note: GitHub Actions cron timespec is in UTC.
+    - cron:  '0 15 * * 1' 
+
 jobs:
-  deploy:
-    name: Deploy
+  build_and_deploy_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
+      - uses: actions/checkout@v2
+      # Add any build steps here. For example:
+      # - run: npm ci && npm run build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          token: ${{ secrets.READ_ONLY_GITHUB_TOKEN }}
-      - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting -P prod 
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          firebaseServiceAccount: 
+            "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MELLYCHAT_DEV }}"
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          # We should be deploying weekly so we set a low time to live as
+          # the previous weeks deploy will be replaced with weeks.
+          expires: 8d
+          projectId: prod
+          channelId: live
