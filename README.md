@@ -1,37 +1,25 @@
-Welcome to Glitch
+MellyChat WebApp
 =================
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
-
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
-
-
-Your Project
+Project Layout
 ------------
 
-### ← README.md
-
-That's this file, where you can tell people what your cool website does and how you built it.
-
-### ← index.html
-
-Where you'll write the content of your website. 
-
-### ← style.css
-
-CSS files add styling rules to your content.
-
-### ← script.js
-
-If you're feeling fancy you can add interactivity to your site with JavaScript.
-
-### ← assets
-
-Drag in `assets`, like images or music, to add them to your project
-
-Made by [Glitch](https://glitch.com/)
--------------------
-
-\ ゜o゜)ノ
+```
+webapp
+|_public/ ... (This is the top level folder for the app)
+   |_index.html
+   |_config/
+      |_ ... (Project specific config e.g. firebase.json, node config etc)
+   |_ assets/
+       |_... (This is where any static assets will live such as style and images)
+       |_css/
+       |_fonts/
+       |_img/
+       |_js
+    |_ templates/
+        |_... (This is where all HTML templates will live.)
+    |_ components/
+        |_...(This is where all javascript files that implement functionality will live.)
+|_ docs/
+     |_...(This is where the project documentation lives.)
+```
