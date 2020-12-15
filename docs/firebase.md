@@ -14,7 +14,20 @@ Environment | URL | Use | Description
 `mellychat-nightly-10f3b` | https://mellychat-nightly-10f3b.web.app | Release | Automated nightly release. No manual deploys
 `mellychat-prod-78ca4` | https://mellychat-prod-78ca4.web.app | Release | Automated weekly release
 
-## Per-PR Previews
+
+## Automated releases
+
+The project uses GitHub Actions to deploy the app to firebase hosting 
+periodically. The github actions are located in [.github/workflows][../.github/workflows/]. 
+The workflows need access to the folowing tokens:
+
+- `$READ_ONLY_GITHUB_TOKEN`: A read only token for github.
+- `FIREBASE_SERVICE_ACCOUNT_MELLYCHAT_DEV`: A key corresponding to the service account configured at Firebase.
+
+Even though we use the channels feature of firebase, we still deploy to distinct environments to isolate the
+backend database. For example, we wouldn't want a dev deploy to be writing the prod database and vise versa.
+
+### Per-PR Previews
 
 Firebase has a handy feature that can automatically deploy to a temporary channel within a single project.
 For each pull request, a preview is generated and the unique preview link is posted back to the PR.
@@ -22,22 +35,6 @@ For each pull request, a preview is generated and the unique preview link is pos
 More info can be found here:
 
 - [Deploy to live & preview channels via GitHub pull requests](https://firebase.google.com/docs/hosting/github-integration)
-
-TODO: Both the previews feature and the associated Github action are in Beta. We can move all deployment to use the channels
-approach. In the short term, previews can replace the `mellychat-dev` environment.
-
-## Automated releases
-
-The project uses GitHub Actions to deploy the app to firebase hosting
-periodically.
-
-The github actions are located in [.github/workflows][../.github/workflows/]. The workflows need access to the folowing tokens:
-
-- `$FIREBASE_TOKEN`: A token that has access to deploy in Firebase
-- `$READ_ONLY_GITHUB_TOKEN`: A read only token for github
-- `FIREBASE_SERVICE_ACCOUNT_MELLYCHAT_DEV`: A key corresponding to the service account configured at Firebase.
-
-TODO: See if we can get service accounts so that they aren't tied to an individual contributer.
 
 ## Useful commands (within container)
 
@@ -62,4 +59,5 @@ File | Usage
 There is also the `.firebase` folder which contains caches -- this folder can be ignored.
 
 ## Resources 
+* https://firebase.google.com/docs/hosting/github-integration
 * https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html
