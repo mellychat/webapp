@@ -14,14 +14,13 @@ Environment | URL | Use | Description
 `mellychat-nightly-10f3b` | https://mellychat-nightly-10f3b.web.app | Release | Automated nightly release. No manual deploys
 `mellychat-prod-78ca4` | https://mellychat-prod-78ca4.web.app | Release | Automated weekly release
 
-
 ## Automated releases
 
 The project uses GitHub Actions to deploy the app to firebase hosting 
 periodically. The github actions are located in [.github/workflows][../.github/workflows/]. 
 The workflows need access to the folowing tokens:
 
-- `$READ_ONLY_GITHUB_TOKEN`: A read only token for github.
+- `READ_ONLY_GITHUB_TOKEN`: A read only token for github.
 - `FIREBASE_SERVICE_ACCOUNT_MELLYCHAT_DEV`: A key corresponding to the service account configured at Firebase.
 
 Even though we use the channels feature of firebase, we still deploy to distinct environments to isolate the
@@ -35,6 +34,17 @@ For each pull request, a preview is generated and the unique preview link is pos
 More info can be found here:
 
 - [Deploy to live & preview channels via GitHub pull requests](https://firebase.google.com/docs/hosting/github-integration)
+
+### Service Account
+
+The service account used for automated releases is `github-action-300106096@mellychat-dev.iam.gserviceaccount.com` If you add
+a new project, you'll need to add this account to the project in the [Google Cloud Platform IAM console](https://console.cloud.google.com/iam-admin/).
+When adding the account, you'll needto add the following roles:
+
+* `Firebase Authentication Admin`
+* `Firebase Hosting Admin`
+* `Cloud Run Viewer`
+* `API Keys Viewer`
 
 ## Useful commands (within container)
 
