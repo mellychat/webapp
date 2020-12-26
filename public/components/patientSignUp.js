@@ -38,21 +38,6 @@ $('.tab a').on('click', function (e) {
   $(this).parent().siblings().removeClass('active');  
 });
 
-// function formSubmit (){
-// $('#form').on('submit',function() {
-// jQuery(function ($) {
-//       var $inputs = $('input[name=firstName],input[name=lastName]');
-//       // $inputs.on('input', function () {
-//       var total = $('input[name=firstName]').val().length + $('input[name=lastName]').val().length;
-//       $inputs.not(this).prop('required', !total);
-//       if( $('input[name=firstName]').val().length > 0 && $('input[name=lastName]').val().length > 0) {
-//         return true;
-//       }
-//       });
-//   });
-// }
-// submitForm.addEventListener("click", formSubmit);
-
 function formSubmit() {
   alert (firstName);
   if (firstName.value == ""){
@@ -66,45 +51,6 @@ function formSubmit() {
 }
 
 if(formSubmit()) {
-    window.location = "/templates/public/patWaitingRoom.html";      
-// function redirect() {
-//        // need some work
-//       // So far as long as one of the inputs is greater than 0, the form moves along. You get the url if there's valuese in both of th. inputs
-//        var $inputs = $('input[name=firstName],input[name=lastName]');
-//        // var firstName = $('input[name=firstName]').val().length;
-//        // var lastName = $('input[name=lastName]').val().length;
-//        var total = $('input[name=firstName]').val().length;
-//        var total2 = $('input[name=lastName]').val().length;
-//        var total3 = total;
-//        if (total3 > 1) {  
-//                 alert(total2);
-//                 window.location = "/templates/public/patWaitingRoom.html";      
-//        }
-//        else {
-//        }
-//     }
+    window.location = "/templates/public/patWaitingRoom.html"; 
+    // PROBLEM: CURRENTLY WHEN THE FORM IS SUBMITTED, USER IS REDIRECTED TO HOME PAGE RATHER THAN PATIENT WAITING ROOM
 }
-// submitForm.addEventListener("click", redirect);
-
-// function formSubmission(){
-//   $('#form').on('submit',function() {
-//     jQuery(function ($) {
-//     let i = 0;
-//     var total = $('input[name=firstName]').val().length;
-//     var total2 = $('input[name=lastName]').val().length;
-//     var $inputs = $('input[name=firstName],input[name=lastName]');
-//     if (total > 0){
-//       i++;
-//     }
-//     if (total2 > 0){
-//       i++;
-//     }
-//     if (i > 1) {  
-//         alert('Is Working');
-//         window.location = "https://hackathonv4.glitch.me/FirebaseRTC/public/patWaitingRoom.html";      
-//        }
-//      });
-//   });
-// }
-
-// submitForm.addEventListener("click", formSubmission);
