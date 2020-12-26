@@ -1,4 +1,3 @@
-let submitForm = document.querySelector("#button");
 let firstName = document.querySelector("#firstName");
 let lastName = document.querySelector("#lastName");
 $('.form').find('input, textarea').on('keyup blur focus', function (e) {
