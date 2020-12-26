@@ -1,43 +1,6 @@
-/* body {
-  font-family: helvetica, arial, sans-serif;
-  margin: 2em;
-}
-
-h1 {
-  font-style: italic;
-  color: #373fff;
-} */
-
-.topnav {
-  /*   background-color: #333; */
-  overflow: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
 .float-right {
   float: right;
 }
-
-.topnav-items {
-  color: #000000;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 25px;
-}
-
-.topnav a:hover {
-  color: blue;
-  /*  will change hover color when we land on color scheme  */
-}
-
-.logoPic {
-  /*   margin-top: 0px;
-  margin-left: 0px; */
-  float: left;
-}
-
 @import "compass/css3";
 *,
 *:before,
@@ -107,7 +70,7 @@ h1 {
   font-weight: 300;
   margin: 0 0 40px;
 }
-#signupText{
+#signup-text{
   color: #04c1de;
   margin-bottom: 30px; ! important
 }
@@ -206,16 +169,13 @@ textarea {
   text-align: right;
   color:#04c1de; ! important
 }
-
-#fileText {
+#file-text {
   font-size: 12px;
   color: #c1bdba;
 }
-
-#fileText .req {
+#file-text .req {
   color: #04c1de;
 }
-
 #welcome-back {
   margin-top: 25px;
   margin-bottom: 25px;
