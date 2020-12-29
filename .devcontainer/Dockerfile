@@ -6,6 +6,7 @@ FROM devillex/docker-firebase
 ENV USER=app
 
 RUN apt-get update && apt-get install -y \
+        lsof \ 
         git \
         openssl \
         libssl-dev \
