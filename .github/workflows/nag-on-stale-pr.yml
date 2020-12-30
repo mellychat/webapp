@@ -1,4 +1,4 @@
-name: "Nag PR when PR is Stale 3 days"
+name: "Nag PR when PR is Stale"
 on:
   schedule:
   - cron: "30 1 * * *"
