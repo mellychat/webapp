@@ -1,7 +1,8 @@
 name: "Nag PR when PR is Stale"
 on:
   schedule:
-  - cron: "30 1 * * *"
+  # Runs at 7am PT daily
+  - cron: "0 15 * * *"
 
 jobs:
   stale:
