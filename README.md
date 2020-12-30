@@ -24,18 +24,21 @@ webapp
 
 ## Developing for MellyChat
 
-Our workflwos are heavily tied to VS Code due to easy Docker/extensions
-integrations. Dev testing is done in a dev container (Dockerfile is supplied
-in repo). 
+1. TODO: Document details for developer setup.
+2. TODO: Document dev workflow (git flow, expectations for PRs)
 
-To start developing, install dev dependencies:
+Development workflows are heavily tied to VS Code. The project uses
+Docker-based remote dev containers and VSCode extensions that make setup and
+workflows easier.
 
-> npm install -D
+To get started, launch the container and then in the terminal:
 
-Then launch the container and start a dev instance:
+>  npm install -D
+
+Next, launch a local dev instance which kills any existing instance:
 
 > npm run local
 
+When you're done, you can kill the local instance:
 
-1. TODO: Document details for developer setup.
-1. TODO: Document dev workflow (git flow, expectations for PRs)
+> npm run killLocal
