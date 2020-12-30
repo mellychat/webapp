@@ -1,6 +1,6 @@
 # Built using https://github.com/github/gitignore/
 
-# Contains cache info from firebase serves.
+# Development related
 .firebase/
 firebase-debug.log
 node_modules
@@ -56,5 +56,6 @@ Sessionx.vim
 *~
 # Auto-generated tag files
 tags
+
 # Persistent undo
 [._]*.un~

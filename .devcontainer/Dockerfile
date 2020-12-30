@@ -1,5 +1,4 @@
 # This file defines a dev container used for app development.
-# TODO: Figure out how to set specific versions.
 
 FROM devillex/docker-firebase
 
