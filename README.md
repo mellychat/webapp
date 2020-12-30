@@ -1,8 +1,6 @@
-MellyChat WebApp
-=================
+# MellyChat WebApp
 
-Project Layout
-------------
+## Project Layout
 
 ```
 webapp
@@ -23,3 +21,21 @@ webapp
 |_ docs/
      |_...(This is where the project documentation lives.)
 ```
+
+## Developing for MellyChat
+
+Our workflwos are heavily tied to VS Code due to easy Docker/extensions
+integrations. Dev testing is done in a dev container (Dockerfile is supplied
+in repo). 
+
+To start developing, install dev dependencies:
+
+> npm install -D
+
+Then launch the container and start a dev instance:
+
+> npm run local
+
+
+1. TODO: Document details for developer setup.
+1. TODO: Document dev workflow (git flow, expectations for PRs)

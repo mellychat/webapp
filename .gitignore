@@ -2,6 +2,8 @@
 
 # Contains cache info from firebase serves.
 .firebase/
+firebase-debug.log
+node_modules
 
 # Local History for Visual Studio Code
 .history/ 
