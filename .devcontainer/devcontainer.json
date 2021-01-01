@@ -41,16 +41,19 @@
 	// Add the IDs of extensions you want installed when the container is created in the array below.
 	// It's probably a good idea to keep this up to date with extensions.json as well. Please keep sorted.
 	"extensions": [
-		"christian-kohler.npm-intellisense",
-		"dbaeumer.vscode-eslint",
+        "christian-kohler.npm-intellisense",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
 		"huizhou.githd",
 		"johnpapa.vscode-peacock",
+        "me-dutour-mathieu.vscode-github-actions",
 		"mfery.gitexplorer",
+        "ms-azuretools.vscode-docker",
 		"msjsdiag.debugger-for-chrome",
-		"xabikos.JavaScriptSnippets", 
         "ms-vscode-remote.vscode-remote-extensionpack",
         "ms-vsliveshare.vsliveshare",
         "ms-vsliveshare.vsliveshare-audio",
         "ms-vsliveshare.vsliveshare-pack",
+		"xabikos.JavaScriptSnippets", 
 	]
 }

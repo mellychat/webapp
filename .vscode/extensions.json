@@ -1,23 +1,19 @@
 {
     // These are required for our workflow, please keep sorted.
     "recommendations": [
-		"christian-kohler.npm-intellisense",
-		"dbaeumer.vscode-eslint",
+        "christian-kohler.npm-intellisense",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
 		"huizhou.githd",
 		"johnpapa.vscode-peacock",
-		"mfery.gitexplorer",
-		"msjsdiag.debugger-for-chrome",
-		"xabikos.JavaScriptSnippets", 
-        "dbaeumer.vscode-eslint",
-        "huizhou.githd",
-        "johnpapa.vscode-peacock",
         "me-dutour-mathieu.vscode-github-actions",
-        "mfery.gitexplorer",
+		"mfery.gitexplorer",
         "ms-azuretools.vscode-docker",
+		"msjsdiag.debugger-for-chrome",
         "ms-vscode-remote.vscode-remote-extensionpack",
         "ms-vsliveshare.vsliveshare",
         "ms-vsliveshare.vsliveshare-audio",
         "ms-vsliveshare.vsliveshare-pack",
-        "msjsdiag.debugger-for-chrome",
+		"xabikos.JavaScriptSnippets", 
     ]
 }
