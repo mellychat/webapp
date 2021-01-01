@@ -27,6 +27,23 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js" defer></script> 
     <script src="/components/patientSignUp.js" defer></script>
+
+    <!-- jQuery -->
+    <script src="/assets/js/jquery-2.1.0.min.js" defer></script>
+
+    <!-- Bootstrap -->
+    <script src="/assets/js/popper.js" defer></script>
+    <script src="/assets/js/bootstrap.min.js" defer></script>
+    
+    <!-- Plugins -->
+    <script src="/assets/js/owl-carousel.js" defer></script>
+    <script src="/assets/js/scrollreveal.min.js" defer></script>
+    <script src="/assets/js/waypoints.min.js" defer></script>
+    <script src="/assets/js/jquery.counterup.min.js" defer></script>
+    <script src="/assets/js/imgfix.min.js" defer></script> 
+        
+    <!-- Global Init -->
+    <script src="/assets/js/custom.js" defer></script>
   </head>
   <body>
     <!-- ***** Preloader Start ***** -->
@@ -49,7 +66,7 @@
                         <a href="index.html" class="logo">Melly</a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
-                        <ul class="nav"> <!-- PROBLEM: THE NAV BAR APPEARS INVISIBLE WHEN APP IS RUN - I am still working on this -->
+                        <ul class="nav"> <!-- // TODO(https://github.com/mellychat/webapp/issues/30): Nav bar is invisible when run -->
                             <li class="scroll-to-section"><a href="index.html" class="active">Home</a></li>
                             <li class="scroll-to-section"><a href="index.html#about">About</a></li>
                             <li class="scroll-to-section"><a href="index.html#services">Resources</a></li>
@@ -85,7 +102,7 @@
             <!-- ***** Sign Up Area Start ***** -->
             <div>
               <h1 class="form-text">Fill The Form To Get Matched!</h1>
-              <form id="sign-up-form" action="/" method="post">
+              <form id="sign-up-form" action="/templates/patWaitingRoom.html" method="post">
                 <!-- ***** Top Row Start ***** -->
                 <div class="top-row">
                   <!-- Input field for first name -->
@@ -110,7 +127,7 @@
                     rows="10"
                     maxlength="300"
                     required></textarea>
-                  <button type="submit" id="button" class="button button-block" onclick ="formSubmit">
+                  <button type="submit" id="button" class="button button-block">
                     <span style="color:#fff;">Match Me!</span>
                   </button>
                 </div>
@@ -122,22 +139,5 @@
           <!-- ***** Tab Content End ***** -->
     </div>
     <!-- ***** Form End ***** -->
-
-    <!-- jQuery -->
-    <script src="/assets/js/jquery-2.1.0.min.js"></script>
-
-    <!-- Bootstrap -->
-    <script src="/assets/js/popper.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-
-    <!-- Plugins -->
-    <script src="/assets/js/owl-carousel.js"></script>
-    <script src="/assets/js/scrollreveal.min.js"></script>
-    <script src="/assets/js/waypoints.min.js"></script>
-    <script src="/assets/js/jquery.counterup.min.js"></script>
-    <script src="/assets/js/imgfix.min.js"></script> 
-    
-    <!-- Global Init -->
-    <script src="/assets/js/custom.js"></script>
   </body>
 </html>

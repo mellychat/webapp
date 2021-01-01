@@ -1,5 +1,3 @@
-let firstName = document.querySelector("#first-name");
-let lastName = document.querySelector("#last-name");
 $('.form').find('input, textarea').on('keyup blur focus', function (e) {
   
   var $this = $(this),
@@ -36,8 +34,3 @@ $('.tab a').on('click', function (e) {
   $(this).parent().addClass('active');
   $(this).parent().siblings().removeClass('active');  
 });
-
-function formSubmit() {
-  window.location = "/templates/patWaitingRoom.html"; 
-  // I am still working on trying to get the basic redirection working
-}
