@@ -61,7 +61,7 @@ a:hover {
   background: #04c1de;
   color: #fff;
 }
-.tab-content > div:last-child {
+.tab-content > #login {
   display: none;
 }
 h1 {

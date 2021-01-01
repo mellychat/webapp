@@ -1,5 +1,5 @@
-let firstName = document.querySelector("#firstName");
-let lastName = document.querySelector("#lastName");
+let firstName = document.querySelector("#first-name");
+let lastName = document.querySelector("#last-name");
 $('.form').find('input, textarea').on('keyup blur focus', function (e) {
   
   var $this = $(this),
@@ -38,18 +38,6 @@ $('.tab a').on('click', function (e) {
 });
 
 function formSubmit() {
-  alert (firstName);
-  if (firstName.value == ""){
-    return false;
-  } else if (lastName.value == ""){
-    return false;
-  }
-  else {
-    return true;
-  }
-}
-
-if(formSubmit()) {
-    window.location = "/templates/public/patWaitingRoom.html"; 
-    // PROBLEM: CURRENTLY WHEN THE FORM IS SUBMITTED, USER IS REDIRECTED TO HOME PAGE RATHER THAN PATIENT WAITING ROOM
+  window.location = "/templates/patWaitingRoom.html"; 
+  // I am still working on trying to get the basic redirection working
 }

@@ -49,7 +49,7 @@
                         <a href="index.html" class="logo">Melly</a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
-                        <ul class="nav"> <!-- PROBLEM: THE NAV BAR APPEARS INVISIBLE WHEN APP IS RUN -->
+                        <ul class="nav"> <!-- PROBLEM: THE NAV BAR APPEARS INVISIBLE WHEN APP IS RUN - I am still working on this -->
                             <li class="scroll-to-section"><a href="index.html" class="active">Home</a></li>
                             <li class="scroll-to-section"><a href="index.html#about">About</a></li>
                             <li class="scroll-to-section"><a href="index.html#services">Resources</a></li>
@@ -70,7 +70,7 @@
     <!-- ***** Form Start ***** -->
     <div class="form">
           <!-- ***** Patient Topic Selection Start ***** -->
-          <h1 class="formText">Which topic relates to your issue?</h1>
+          <h1 class="form-text">Which topic relates to your issue?</h1>
           <ul class="tab-group">
             <li class="tab active"><a href="#physical">Physical Health</a></li>
             <li class="tab"><a href="#mental">Mental Health</a></li>
@@ -84,30 +84,32 @@
 
             <!-- ***** Sign Up Area Start ***** -->
             <div>
-              <h1 class="formText">Fill The Form To Get Matched!</h1>
-              <form action="/" method="post">
+              <h1 class="form-text">Fill The Form To Get Matched!</h1>
+              <form id="sign-up-form" action="/" method="post">
                 <!-- ***** Top Row Start ***** -->
                 <div class="top-row">
                   <!-- Input field for first name -->
                   <div class="field-wrap">
-                      <label>First Name<span class="req">*</span> </label>
-                    <input type="text" name="firstName" id="firstName"  autocomplete="off" required/>
+                    <label>First Name<span class="req">*</span> </label>
+                    <input type="text" id="first-name" name="first-name" maxlength="15" autocomplete="off" required/>
                   </div>
                   <!-- Input field for last name -->
                   <div class="field-wrap">
                     <label>Last Name<span class="req">*</span> </label>
-                    <input type="text" name="lastName"  id="lastName"  autocomplete="off" required/>
+                    <input type="text" id="last-name" name="last-name" maxlength="15" autocomplete="off" required/>
                   </div>
                 </div>
                 <!-- ***** Top Row End ***** -->
                 <!-- Input field for description of issue -->
                 <div class="field-wrap">
                   <textarea
-                    id="textArea"
-                    name="paragraph_text"
+                    id="text-area"
+                    name="paragraph-text"
                     placeholder="Please give a short description of your issue."
                     cols="50"
-                    rows="10"></textarea>
+                    rows="10"
+                    maxlength="300"
+                    required></textarea>
                   <button type="submit" id="button" class="button button-block" onclick ="formSubmit">
                     <span style="color:#fff;">Match Me!</span>
                   </button>
@@ -115,30 +117,7 @@
               </form>
             </div>
             <!-- ***** Sign Up Area End ***** -->
-
-            <!-- ***** Login Area Start ***** -->
-            <!-- CONFUSION: THE BELOW CODE SEEMS TO IMPACT THE WAY THE ABOVE FORM IS RENDERED BUT I DON'T KNOW WHY THIS IS THE CASE WHEN THE BELOW CODE IS FOR A LOGIN FORM NOT USED ON THIS PAGE -->
-            <div id="login">
-              <h1>Welcome Back!</h1>
-              <form action="/" method="post">
-                <!-- Input field for email address -->
-                <div class="field-wrap">
-                  <label> Email Address<span class="req">*</span> </label>
-                  <input type="email" required autocomplete="off" />
-                </div>
-                <!-- Input field for password -->
-                <div class="field-wrap">
-                  <label> Password<span class="req">*</span> </label>
-                  <input type="password" required autocomplete="off" />
-                </div>
-                <!-- Forgot password -->
-                <p class="forgot"><a href="#">Forgot Password?</a></p>
-
-                <button type="submit" class="button button-block">Log In</button>
-              </form>
-            </div>
-            <!-- ***** Login Area End ***** -->
-
+            
           </div>
           <!-- ***** Tab Content End ***** -->
     </div>

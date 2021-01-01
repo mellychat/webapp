@@ -61,9 +61,6 @@ a:hover {
   background: #04c1de;
   color: #fff;
 }
-.tab-content > div:last-child {
-  display: none;
-}
 h1 {
   text-align: center;
   color: #04c1de;
@@ -97,7 +94,7 @@ label.active .req {
 label.highlight {
   color: #fff;
 }
-.formText{
+.form-text{
   font-size: 30px;
   margin-bottom: 25px;
 }
@@ -171,6 +168,6 @@ textarea {
 #talk{
   width:100%;
 }
-#textArea{
+#text-area{
   font-family: "Titillium Web", sans-serif;
 }
