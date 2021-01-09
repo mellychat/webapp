@@ -1,20 +1,20 @@
 name: "Nag PR when PR is Stale"
 on:
   schedule:
-  # Runs at 7am PT daily
-  - cron: "*/60 * * * *"
+    # Runs at 7am PT daily
+    - cron: "*/60 * * * *"
 
 jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/stale@v3
-      with:
-        repo-token: ${{ secrets.REPO_OWNER_GITHUB_TOKEN }}
-        skip-stale-issue-message: true
-        # We don't want to auto-close PRs but we do want to nag the author.
-        days-before-stale: 2
-        days-before-close: 365
-        remove-stale-when-updated: true
-        stale-pr-message: '(pr-nagger-bot): Friendly ping. If you are a reviewer please take a look. If you are an author, please respond to comments.'
-        stale-pr-label: 'no-pr-activity'
+      - uses: actions/stale@v3
+        with:
+          repo-token: ${{ secrets.REPO_OWNER_GITHUB_TOKEN }}
+          skip-stale-issue-message: true
+          # We don't want to auto-close PRs but we do want to nag the author.
+          days-before-stale: 2
+          days-before-close: 365
+          remove-stale-when-updated: true
+          stale-pr-message: "(pr-nagger-bot): Friendly ping. If you are a reviewer please take a look. If you are an author, please respond to comments."
+          stale-pr-label: "no-pr-activity"
