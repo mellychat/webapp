@@ -1,43 +1,6 @@
-/* body {
-  font-family: helvetica, arial, sans-serif;
-  margin: 2em;
-}
-
-h1 {
-  font-style: italic;
-  color: #373fff;
-} */
-
-.topnav {
-  /*   background-color: #333; */
-  overflow: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
 .float-right {
   float: right;
 }
-
-.topnav-items {
-  color: #000000;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 25px;
-}
-
-.topnav a:hover {
-  color: blue;
-  /*  will change hover color when we land on color scheme  */
-}
-
-.logoPic {
-  /*   margin-top: 0px;
-  margin-left: 0px; */
-  float: left;
-}
-
 @import "compass/css3";
 *,
 *:before,
@@ -98,9 +61,6 @@ a:hover {
   background: #04c1de;
   color: #fff;
 }
-.tab-content > div:last-child {
-  display: none;
-}
 h1 {
   text-align: center;
   color: #04c1de;
@@ -114,7 +74,6 @@ label {
   color: rgba(255, 255, 255, 0.5);
   transition: all 0.25s ease;
   -webkit-transform: translate3d(0,0,0);
-  /* Git told me to edit line 118. It orginally was (-webkit-backface-visibility: hidden;) I addd line 119 to fix these changese  */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   pointer-events: none;
@@ -135,7 +94,7 @@ label.active .req {
 label.highlight {
   color: #fff;
 }
-.formText{
+.form-text{
   font-size: 30px;
   margin-bottom: 25px;
 }
@@ -206,16 +165,9 @@ textarea {
   margin-top: -20px;
   text-align: right;
 }
-
 #talk{
   width:100%;
 }
-
-#textArea{
+#text-area{
   font-family: "Titillium Web", sans-serif;
 }
-
-#matchButton{
-   /* not sure if this is the right thing. */
-  background-color:rgba(19, 35, 47, 0.9);
-};
