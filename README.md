@@ -33,7 +33,7 @@ workflows easier.
 
 To get started, launch the container and then in the terminal:
 
->  npm install -D
+> npm install -D
 
 Next, launch a local dev instance which kills any existing instance:
 

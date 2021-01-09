@@ -5,19 +5,19 @@ quick references for how to launch firebase (inside the container).
 
 ## Environments
 
-An *environment* is just a Firebase project. There are 3 environments, each
+An _environment_ is just a Firebase project. There are 3 environments, each
 with identical configuration in firebase:
 
-Environment | URL | Use | Description
-------------|-----|----|-------
-`mellychat-dev`| https://mellychat-dev.web.app/ | Dev | Anyone can deploy at any time.
-`mellychat-nightly-10f3b` | https://mellychat-nightly-10f3b.web.app | Release | Automated nightly release. No manual deploys
-`mellychat-prod-78ca4` | https://mellychat-prod-78ca4.web.app | Release | Automated weekly release
+| Environment               | URL                                     | Use     | Description                                  |
+| ------------------------- | --------------------------------------- | ------- | -------------------------------------------- |
+| `mellychat-dev`           | https://mellychat-dev.web.app/          | Dev     | Anyone can deploy at any time.               |
+| `mellychat-nightly-10f3b` | https://mellychat-nightly-10f3b.web.app | Release | Automated nightly release. No manual deploys |
+| `mellychat-prod-78ca4`    | https://mellychat-prod-78ca4.web.app    | Release | Automated weekly release                     |
 
 ## Automated releases
 
-The project uses GitHub Actions to deploy the app to firebase hosting 
-periodically. The github actions are located in [.github/workflows][../.github/workflows/]. 
+The project uses GitHub Actions to deploy the app to firebase hosting
+periodically. The github actions are located in [.github/workflows][../.github/workflows/].
 The workflows need access to the folowing tokens:
 
 - `READ_ONLY_GITHUB_TOKEN`: A read only token for github.
@@ -41,10 +41,10 @@ The service account used for automated releases is `github-action-300106096@mell
 a new project, you'll need to add this account to the project in the [Google Cloud Platform IAM console](https://console.cloud.google.com/iam-admin/).
 When adding the account, you'll needto add the following roles:
 
-* `Firebase Authentication Admin`
-* `Firebase Hosting Admin`
-* `Cloud Run Viewer`
-* `API Keys Viewer`
+- `Firebase Authentication Admin`
+- `Firebase Hosting Admin`
+- `Cloud Run Viewer`
+- `API Keys Viewer`
 
 ## Useful commands (within container)
 
@@ -61,13 +61,14 @@ deploy to the `dev` environment:
 
 There are a few important repo config files to be aware of:
 
-File | Usage
----| ---
-`.firebaserc` | Contains projects and alias used with the `firebase` cli tool. For example, the `dev` alias is configured there which maps the alias to a specific firebase environment.
-`firebase.json` | This helps firebase hosting figure out how to launch the app.
+| File            | Usage                                                                                                                                                                    |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `.firebaserc`   | Contains projects and alias used with the `firebase` cli tool. For example, the `dev` alias is configured there which maps the alias to a specific firebase environment. |
+| `firebase.json` | This helps firebase hosting figure out how to launch the app.                                                                                                            |
 
 There is also the `.firebase` folder which contains caches -- this folder can be ignored.
 
-## Resources 
-* https://firebase.google.com/docs/hosting/github-integration
-* https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html
+## Resources
+
+- https://firebase.google.com/docs/hosting/github-integration
+- https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html

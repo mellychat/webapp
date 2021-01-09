@@ -26,7 +26,7 @@ $(".form")
   });
 
 // This is called when either "sign up" or "log in" tab is clicked.
-// It changes the "active" tab by adding 'active' to the clicked tab's class 
+// It changes the "active" tab by adding 'active' to the clicked tab's class
 // and removing 'active' from the other.
 $(".tab a").on("click", function (e) {
   e.preventDefault();

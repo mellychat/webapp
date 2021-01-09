@@ -1,10 +1,10 @@
-.images_container{
-  display:flex;
-  margin:150px;
+.images_container {
+  display: flex;
+  margin: 150px;
 }
 
-.video{
-  height:500px;
-  width:500px;
-  margin:50px;
+.video {
+  height: 500px;
+  width: 500px;
+  margin: 50px;
 }

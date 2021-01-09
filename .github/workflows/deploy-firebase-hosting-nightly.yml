@@ -5,7 +5,7 @@ on:
   schedule:
     # * is a special character in YAML so you have to quote this string
     # Deploy at 11PM PT. Note that GitHub Actions cron timespec is in UTC.
-    - cron:  '0 6 * * *' 
+    - cron: "0 6 * * *"
 
 jobs:
   build_and_deploy_job:
@@ -16,11 +16,10 @@ jobs:
       # - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          firebaseServiceAccount: 
-            "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MELLYCHAT_DEV }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MELLYCHAT_DEV }}"
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           # We should be deploying nightly so we set a low time to live as
           # the previous nights deploy will be replaced with tonights.
           expires: 2d
-          projectId: nightly 
+          projectId: nightly
           channelId: live

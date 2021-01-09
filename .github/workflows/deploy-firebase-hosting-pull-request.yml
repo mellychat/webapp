@@ -1,7 +1,7 @@
 # Documentation: https://github.com/mellychat/webapp/blob/mainline/docs/firebase.md#firebase-project-setup
 name: Deploy to Firebase Hosting on PR
 
-on: 
+on:
   pull_request:
     # Only when changes to the website
     paths:
@@ -14,9 +14,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          firebaseServiceAccount: 
-            "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MELLYCHAT_DEV }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MELLYCHAT_DEV }}"
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          projectId: dev 
+          projectId: dev
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
