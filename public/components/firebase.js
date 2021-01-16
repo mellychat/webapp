@@ -16,20 +16,20 @@ let roomDialog = null;
 let roomId = null;
 
 function init() {
-  document.querySelector("#cameraBtn").addEventListener("click", openUserMedia);
-  document.querySelector("#hangupBtn").addEventListener("click", hangUp);
-  document.querySelector("#createBtn").addEventListener("click", createRoom);
-  document.querySelector("#matchMe").addEventListener("click", createAndJoin);
-  document.querySelector("#matchMe").disabled = false;
-  document.querySelector("#joinBtn").addEventListener("click", joinRoom);
-  document.querySelector("#joinBtn").disabled = true;
+  document.querySelector("#camera-btn").addEventListener("click", openUserMedia);
+  document.querySelector("#hang-up-btn").addEventListener("click", hangUp);
+  document.querySelector("#create-btn").addEventListener("click", createRoom);
+  document.querySelector("#match-me").addEventListener("click", createAndJoin); 
+  document.querySelector("#match-me").disabled = false;
+  document.querySelector("#join-btn").addEventListener("click", joinRoom);
+  document.querySelector("#join-btn").disabled = true;
 
   roomDialog = new mdc.dialog.MDCDialog(document.querySelector("#room-dialog"));
 }
 
 async function createRoom() {
-  document.querySelector("#createBtn").disabled = true;
-  document.querySelector("#joinBtn").disabled = true;
+  document.querySelector("#create-btn").disabled = true;
+  document.querySelector("#join-btn").disabled = true;
   const db = firebase.firestore();
   const roomId = "12345";
   const roomRef = await db.collection("rooms").doc(roomId);
@@ -71,7 +71,7 @@ async function createRoom() {
 
   console.log(`New room created with SDP offer. Room ID: ${roomId}`);
   document.querySelector(
-    "#currentRoom"
+    "#current-room"
   ).innerText = `Current room is ${roomId} - You are the caller!`;
   // Code for creating a room above
 
@@ -110,8 +110,8 @@ async function createRoom() {
 }
 
 function joinRoom() {
-  document.querySelector("#createBtn").disabled = true;
-  document.querySelector("#joinBtn").disabled = true;
+  document.querySelector("#create-btn").disabled = true;
+  document.querySelector("#join-btn").disabled = true;
 
   document.querySelector("#confirmJoinBtn").addEventListener(
     "click",
@@ -119,7 +119,7 @@ function joinRoom() {
       roomId = "12345";
       console.log("Join room: ", roomId);
       document.querySelector(
-        "#currentRoom"
+        "#current-room"
       ).innerText = `Current room is ${roomId} - You are the callee!`;
       await joinRoomById(roomId);
     },
@@ -203,20 +203,20 @@ async function openUserMedia(e) {
     video: true,
     audio: true,
   });
-  document.querySelector("#localVideo").srcObject = stream;
+  document.querySelector("#local-video").srcObject = stream;
   localStream = stream;
   remoteStream = new MediaStream();
-  document.querySelector("#remoteVideo").srcObject = remoteStream;
+  document.querySelector("#remote-video").srcObject = remoteStream;
 
-  console.log("Stream:", document.querySelector("#localVideo").srcObject);
-  document.querySelector("#cameraBtn").disabled = true;
-  document.querySelector("#joinBtn").disabled = false;
-  document.querySelector("#createBtn").enable = true;
-  document.querySelector("#hangupBtn").disabled = false;
+  console.log("Stream:", document.querySelector("#local-video").srcObject);
+  document.querySelector("#camera-btn").disabled = true;
+  document.querySelector("#join-btn").disabled = false;
+  document.querySelector("#create-btn").enable = true;
+  document.querySelector("#hang-up-btn").disabled = false;
 }
 
 async function hangUp(e) {
-  const tracks = document.querySelector("#localVideo").srcObject.getTracks();
+  const tracks = document.querySelector("#local-video").srcObject.getTracks();
   tracks.forEach((track) => {
     track.stop();
   });
@@ -229,13 +229,13 @@ async function hangUp(e) {
     peerConnection.close();
   }
 
-  document.querySelector("#localVideo").srcObject = null;
-  document.querySelector("#remoteVideo").srcObject = null;
-  document.querySelector("#cameraBtn").disabled = false;
-  document.querySelector("#joinBtn").disabled = true;
-  document.querySelector("#createBtn").disabled = false;
-  document.querySelector("#hangupBtn").disabled = true;
-  document.querySelector("#currentRoom").innerText = "";
+  document.querySelector("#local-video").srcObject = null;
+  document.querySelector("#remote-video").srcObject = null;
+  document.querySelector("#camera-btn").disabled = false;
+  document.querySelector("#join-btn").disabled = true;
+  document.querySelector("#create-btn").disabled = false;
+  document.querySelector("#hang-up-btn").disabled = true;
+  document.querySelector("#current-room").innerText = "";
 
   // Don't delete the room, just delete the callee candidates. This lets use rejoin the room
   // automatically but without all these dead caller candidate references.
