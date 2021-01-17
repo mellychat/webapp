@@ -14,16 +14,14 @@
       rel="stylesheet"
     />
 
-    <title>Match |Melly</title>
+    <title>Demo | Melly</title>
     <link
       rel="shortcut icon"
       type="image/x-icon"
       href="https://cdn.glitch.com/aa3eaa29-7183-4f33-b4e2-c3a30c833a25%2F31540120.jpg?v=1598133005255"
     />
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/assets/css/patientSignUp.css" />
     <link rel="stylesheet" href="/assets/css/finesse_match.css" />
-    <link rel="stylesheet" href="/assets/css/prSignUp.css" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -45,9 +43,35 @@
       href="/assets/css/owl-carousel.css"
     />
 
-    <!-- import the webpage's javascript file -->
+    <!-- import the webpage's javascript files -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="/components/patientSignUp.js" defer></script>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script
+      defer
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"
+    ></script>
+    <script
+      defer
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"
+    ></script>
+
+    <script defer src="/assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script defer src="/assets/js/popper.js"></script>
+    <script defer src="/assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script defer src="/assets/js/owl-carousel.js"></script>
+    <script defer src="/assets/js/scrollreveal.min.js"></script>
+    <script defer src="/assets/js/waypoints.min.js"></script>
+    <script defer src="/assets/js/jquery.counterup.min.js"></script>
+    <script defer src="/assets/js/imgfix.min.js"></script>
+
+    <!-- Global Init -->
+    <script defer src="/assets/js/custom.js"></script>
   </head>
   <body>
     <div id="preloader">
@@ -70,10 +94,13 @@
               <!-- ***** Menu Start ***** -->
               <ul class="nav">
                 <li class="scroll-to-section">
-                  <a href="/templates/index.html" class="active">Home</a>
+                  <a href="/templates/index.html">Home</a>
                 </li>
                 <li class="scroll-to-section">
                   <a href="/templates/index.html#about">About</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="/templates/finesse_match.html" class="active">Demo</a>
                 </li>
                 <li class="scroll-to-section">
                   <a href="/templates/index.html#services">Resources</a>
@@ -94,36 +121,18 @@
     <!-- ***** Header Area End ***** -->
 
     <div class="images_container">
-      <video autoplay class="video">
+      <video autoplay class="video" id="video1">
         <source
           src="https://cdn.glitch.com/eb6e6852-d15d-4972-9a23-18fd43f55592%2Fvideo1.mov?v=1598213723677"
           type="video/mp4"
         />
       </video>
 
-      <video autoplay class="video">
+      <video autoplay class="video" id="video2">
         <source
           src="https://cdn.glitch.com/eb6e6852-d15d-4972-9a23-18fd43f55592%2Fmelly_screen_recording_1.mov?v=1598213772179"
           type="video/mp4"
         />
       </video>
     </div>
-
-    <!-- jQuery -->
-    <script src="/assets/js/jquery-2.1.0.min.js"></script>
-
-    <!-- Bootstrap -->
-    <script src="/assets/js/popper.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-
-    <!-- Plugins -->
-    <script src="/assets/js/owl-carousel.js"></script>
-    <script src="/assets/js/scrollreveal.min.js"></script>
-    <script src="/assets/js/waypoints.min.js"></script>
-    <script src="/assets/js/jquery.counterup.min.js"></script>
-    <script src="/assets/js/imgfix.min.js"></script>
-
-    <!-- Global Init -->
-    <script src="/assets/js/custom.js"></script>
-  </body>
 </html>
