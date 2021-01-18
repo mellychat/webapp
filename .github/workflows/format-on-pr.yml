@@ -19,7 +19,7 @@ jobs:
         with:
           # Make sure the actual branch is checked out when running on pull requests
           ref: ${{ github.head_ref }}
-          fetch_depth: 0
+          fetch-depth: 0
 
       - name: Prettify code
         uses: creyD/prettier_action@v3.1
