@@ -1,0 +1,33 @@
+.video {
+  height: 500px;
+  width: 500px;
+}
+
+#video1 {
+  margin-right: 100px;
+}
+
+.images_container {
+  display: flex;
+  margin-top: -50px;
+  margin-left: 200px;
+}
+
+.context {
+  text-align: center;
+  margin-top: 135px !important;
+  margin-left: 50px !important;
+}
+
+h1{
+  color:#04c1de;
+}
+
+p {
+  width: 25%;
+  margin-left: 520px !important;
+  margin-top: 25px !important;
+}
+
+
+
