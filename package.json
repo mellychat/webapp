@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "firebase": "^7.13.1",
-    "firebase-tools": "^8.9.0",
+    "firebase-tools": "^9.2.1",
     "prettier": "2.2.1"
   },
   "scripts": {
