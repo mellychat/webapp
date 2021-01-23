@@ -77,7 +77,7 @@ button {
     display: inline-block;
 }
 
-#pageDiv {
+#page-div {
   margin-top: -25px;
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -103,13 +103,13 @@ button {
   justify-self:center;
 }
 
-#localVideo{
+#local-video{
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
   margin-top: -50px;
 }
 
 
-#prMain{
+#pr-main{
   justify-self:center;
 /*   border: 1px black solid; */
   padding: 20px;
@@ -129,7 +129,7 @@ h2{
   margin: 30px 0;
 }
 
-#prMain > *{
+#pr-main > *{
   justify-self:center;
   text-align:center;
 }
@@ -138,10 +138,10 @@ h2{
   color:#04c1de;
 }
 
-#patientName{
+#patient-name{
   font-size: 36px ! important; 
 }
-#issueName{
+#issue-name{
   font-size: 26px !  important;
   
 }
@@ -149,7 +149,7 @@ h2{
   font-size: 22px ! important; 
 }
 
-.patientInfo{
+.patient-info{
   margin-top: 16px ! important;
 }
 
