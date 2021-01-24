@@ -11,5 +11,17 @@
         "destination": "/templates/index.html"
       }
     ]
+  },
+  "emulators": {
+    "firestore": {
+      "port": 5002
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true,
+      "port": 5003
+    }
   }
 }

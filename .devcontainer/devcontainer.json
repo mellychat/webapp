@@ -30,8 +30,17 @@
     "terminal.integrated.shell.linux": null
   },
 
-  // Uncomment the next line if you want to publish any ports.
-  "forwardPorts": [5000, 5001, 9005],
+  // These ports are needed for firebase functionality:
+  // see https://firebase.google.com/docs/emulator-suite/install_and_configure#port_configuration
+  // Also see the firebase.json which defines additional ports used for testing
+  // (emulators).
+  "forwardPorts": [
+    5000, // Firebase Hosting
+    5001, // Firebase Cloud functions
+    5002, // Firebase Emulator: Firestore
+    5003, // Firebase Emulator: UI
+    9005 // Need for the firebase login command to work.
+  ],
 
   // Uncomment the next line to run commands after the container is created - for example installing git.
   // "postCreateCommand": "apt-get update && apt-get install -y git",
