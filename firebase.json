@@ -1,10 +1,9 @@
 {
-  "database": {
-    "rules": "FirebaseRTC/database.rules.json"
+  "firestore": {
+    "rules": "firestore.rules.json"
   },
   "hosting": {
     "public": "public",
-
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
