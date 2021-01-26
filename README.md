@@ -20,9 +20,11 @@ webapp
         |_...(This is where all javascript files that implement functionality will live.)
 |_ docs/
      |_...(This is where the project documentation lives.)
+|_ test/
+     |_...(This is where unit and e2e tests lives.)
 ```
 
-## Developing for MellyChat
+## Developing for MellyChat {#hack-mellychat}
 
 1. TODO: Document details for developer setup.
 2. TODO: Document dev workflow (git flow, expectations for PRs)
@@ -37,8 +39,15 @@ To get started, launch the container and then in the terminal:
 
 Next, launch a local dev instance which kills any existing instance:
 
-> npm run local
+> npm run start:local
 
-When you're done, you can kill the local instance:
+When you're done, you can kill the local instance. This script kills the
+firebase server instance along with any emulators setup for testing.
 
-> npm run killLocal
+> npm run stop:firebase
+
+You may also run the tests. For details on testing see the
+[Testing](https://github.com/mellychat/webapp/tree/mainline/docs)
+documentation.
+
+> npm test

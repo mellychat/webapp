@@ -2,7 +2,7 @@
 
 # Development related
 .firebase/
-firebase-debug.log
+*-debug.log
 node_modules
 
 # Local History for Visual Studio Code
