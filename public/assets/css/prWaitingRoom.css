@@ -111,7 +111,6 @@ button {
 
 #pr-main{
   justify-self:center;
-/*   border: 1px black solid; */
   padding: 20px;
   display:grid;
   grid-template-columns: 1fr;

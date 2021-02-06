@@ -186,7 +186,7 @@ div#videos > video {
   margin: 1em;
 }
 
-#pageDiv {
+#page-div {
   margin-top: 100px;
 }
 
@@ -5061,17 +5061,17 @@ svg.mdc-button__icon {
   margin-right: 8px;
 }
 
-.matchHeader {
+.match-header {
   text-align: center;
   color: #04c1de;
   margin-top: 135px;
 }
 
-#hangupBtn {
+#hangup-btn {
   margin-left: 25%;
   margin-top: 35px;
 }
 
-#cameraBtn {
+#camera-btn {
   margin-left: 5px;
 }
