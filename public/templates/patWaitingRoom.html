@@ -107,11 +107,11 @@
  -->
 
   <!-- Start of div containing buttons for patient directions -->
-  <div id="pageDiv">
-    <div id="patientDirections">
+  <div id="page-div">
+    <div id="patient-directions">
       <!-- First child -->
       <!-- Creates pop up instruction -->
-      <h1 id="patTitle">Follow instructions, to get matched with a doctor!</h1>
+      <h1 id="patient-title">Follow instructions, to get matched with a doctor!</h1>
       <h3 class="command">1. Turn on your camera and microphone</h3>
 
       <p class="outlier">Melly requires access to your camera and microphone.To enable access, follow the instructions
@@ -119,12 +119,12 @@
         left corner of your screen.<br><br>3. Click "Allow" &gt; Continue to the second step. </p>
 
       <!-- Makes camera & mic button -->
-      <button class="mdc-button mdc-button--raised " id="cameraBtn">
+      <button class="mdc-button mdc-button--raised " id="camera-btn">
         <i class="material-icons mdc-button__icon" aria-hidden="true">perm_camera_mic</i>
         <span class="mdc-button__label">Open Camera & Microphone</span>
       </button>
 
-      <h3 class="command" id="StepTwo">2. Get matched with a doctor</h3>
+      <h3 class="command" id="step-two">2. Get matched with a doctor</h3>
 
       <p class="outlier">Now press the "Match Me" button to enter a video room. Once in the room, a doctor will meet
         with you shortly.
@@ -132,24 +132,24 @@
         safe and show respect
         while using this platform.</p>
       <!-- Makes match me button  -->
-      <button class="mdc-button mdc-button--raised " disabled id="createBtn">
+      <button class="mdc-button mdc-button--raised " disabled id="create-btn">
         <i class="material-icons mdc-button__icon" aria-hidden="true">group_add</i>
         <span class="mdc-button__label">Match Me</span>
       </button>
       <!-- Old match me button -->
-      <button hidden class="mdc-button mdc-button--raised" disabled id="matchMe">
+      <button hidden class="mdc-button mdc-button--raised" disabled id="match-me">
         <i class="material-icons mdc-button__icon" aria-hidden="true">group_add</i>
         <span class="mdc-button__label">Original Match Me</span>
       </button>
 
       <!-- Join room button -->
-      <button hidden class="mdc-button mdc-button--raised" disabled id="joinBtn">
+      <button hidden class="mdc-button mdc-button--raised" disabled id="join-btn">
         <i class="material-icons mdc-button__icon" aria-hidden="true">group</i>
         <span class="mdc-button__label">Join Room</span>
       </button>
 
       <!-- Hang up button -->
-      <button hidden class="mdc-button mdc-button--raised" disabled id="hangupBtn">
+      <button hidden class="mdc-button mdc-button--raised" disabled id="hangup-btn">
         <i hidden class="material-icons mdc-button__icon" aria-hidden="true">close</i>
         <span hidden class="mdc-button__label">Hangup</span>
       </button>
@@ -159,11 +159,11 @@
     <!--   <div>
       <span id="currentRoom"></span>
   </div> -->
-    <div id="videos">
-      <!--Second child-->
-      <!-- Contains video chat function -->
-      <video id="localVideo" muted autoplay playsinline></video>
-      <video hidden id="remoteVideo" autoplay playsinline></video>
+      <div id="videos">
+        <!--Second child-->
+        <video id="local-video" muted autoplay playsinline></video>
+        <video hidden id="remote-video" autoplay playsinline></video>
+      </div>
     </div>
 
   </div>
@@ -183,6 +183,23 @@
             <label class="mdc-floating-label" for="my-text-field">Room ID</label>
             <div class="mdc-line-ripple"></div>
           </div>
+          <footer class="mdc-dialog__actions">
+            <button
+              type="button"
+              class="mdc-button mdc-dialog__button"
+              data-mdc-dialog-action="no"
+            >
+              <span class="mdc-button__label">Cancel</span>
+            </button>
+            <button
+              id="confirm-join-btn"
+              type="button"
+              class="mdc-button mdc-dialog__button"
+              data-mdc-dialog-action="yes"
+            >
+              <span class="mdc-button__label">Join</span>
+            </button>
+          </footer>
         </div>
         <footer class="mdc-dialog__actions">
           <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no">

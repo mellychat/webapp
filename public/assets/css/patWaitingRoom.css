@@ -90,7 +90,7 @@ button {
 
 
 
-#localVideo {
+#local-video {
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
   margin-top: 95px !important;
   margin-right: -95px !important;
@@ -102,7 +102,7 @@ button {
   grid-template-columns: 1fr 1fr;
 }
 
-#patientDirections {
+#patient-directions {
   justify-self: center;
   /*   border: 1px black solid; */
   padding: 20px;
@@ -124,7 +124,7 @@ button {
   font-size: 20px !important;
 }
 
-#patientDirections > * {
+#patient-directions > * {
   justify-self: center;
 }
 
@@ -133,7 +133,7 @@ button {
   font-size: 13px !important;
 }
 
-#patTitle {
+#pat-title {
   margin-top: 15px;
   margin-bottom: 15px;
   text-align: center;
@@ -142,6 +142,6 @@ button {
   font-weight: bold;
 }
 
-#StepTwo {
+#step-two {
   margin-top: 15px;
 }
