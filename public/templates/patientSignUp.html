@@ -82,6 +82,9 @@
 
     <!-- Global Init -->
     <script defer src="/assets/js/custom.js"></script>
+
+    <!-- Importing The Navigation Bar -->
+    <script src="/components/navBar.js"></script>
   </head>
   <body>
     <!-- ***** Preloader Start ***** -->
@@ -95,41 +98,7 @@
     <!-- ***** Preloader End ***** -->
 
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <nav class="main-nav">
-              <a href="index.html" class="logo">Melly</a>
-              <!-- ***** Menu Start ***** -->
-              <ul class="nav">
-                <!-- // TODO(https://github.com/mellychat/webapp/issues/30): Nav bar is invisible when run -->
-                <li class="scroll-to-section">
-                  <a href="index.html" class="active">Home</a>
-                </li>
-                <li class="scroll-to-section">
-                  <a href="index.html#about">About</a>
-                </li>
-                <li class="scroll-to-section">
-                  <a href="/templates/demo.html">Demo</a>
-                </li>
-                <li class="scroll-to-section">
-                  <a href="index.html#services">Resources</a>
-                </li>
-                <li class="scroll-to-section">
-                  <a href="index.html#contact-us">Contact Us</a>
-                </li>
-              </ul>
-              <!-- Hamburger menu for mobile and tablet devices  -->
-              <a class="menu-trigger">
-                <span>Menu</span>
-              </a>
-              <!-- ***** Menu End ***** -->
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
+    <nav-bar></nav-bar>
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Form Start ***** -->
