@@ -1,83 +1,135 @@
-/*
- * DELETE ME TEXT: Make a copy, do not modify.
- * Implements Excercise 01: Fun with Firestore SDK.
- * @Date: 2021/01/DD
- */
 import firebase from "firebase/app";
 import "firebase/firestore";
 
 import {
   TOP_LEVEL_COLLECTION_NAME,
-  TEST_DOCUMENT_NAME,
+  AUTHOR_INFO_DOC_NAME,
   COMPLETED_STEPS_DOC_NAME,
   RESEARCH_ITEMS_COLLECTION_NAME,
+  RESEARCH_DOC_NAME,
 } from "./constants.js";
 
-/**
- * Creates a sub collection in the given top level collection.
- *
- * The create sub collection which stores documents that contain info about
- * research documents we've read. Also updates the steps completed collection
- * to reflect progress.
- *
- * @param {firestore.Firestore} db The firestore instance.
- */
-function createResearchItemsCollection(db) {
-  // TODO: Create a collection inside the top level collection.
-  // TODO: Update the steps completed collection.
+class ResearchItem {
+  constructor(category, count) {
+    this.category = category;
+    this.count = count;
+  }
+
+  getItem() {
+    return {
+      title: "title ".concat(this.count),
+      category: this.category,
+      url: "url ".concat(this.count),
+      summary: "summary ".concat(this.count),
+      date: "date ".concat(this.count),
+    };
+  }
 }
 
 /**
- * Adds the required research items into the collection.
- *
- * Also updates the steps completed collection to refelect progress.
- *
- * @param {firestore.Firestore} db The firestore instance.
- */
-function allAllResearchItems(db) {
-  // TODO: Add 3 git documents
-  // TODO: Add 3 webRTC documents
-  // TODO: Add 3 firebase documents
-}
-
-/**
- * Creates a document in the given top level collection.
- *
- * Also add booleans which track progress on the exercise.
+ * Step 1: Create a document in the top level collection named COMPLETED_STEPS_DOC_NAME.
+ * Add a data item keyed by the steps with values set to `false`.
  *
  * @param {firestore.Firestore} db The firestore instance.
  */
-async function createStepsCompletedDoc(db) {
-  await db
+async function setupStepsCompleted(db) {
+  return await db
     .collection(TOP_LEVEL_COLLECTION_NAME)
     .doc(COMPLETED_STEPS_DOC_NAME)
     .set({
-      createdATopLevelCollection: true,
-      addADocumentInTopLevelCollection: true,
-      createdResearchItemsSubCollection: false,
-      addedAllResearchDocuments: false,
+      createAuthorInfo: false,
+      createResearchDoc: false,
+      addResearchItems: false,
     });
-
-  console.log(
-    `Added doc named ${COMPLETED_STEPS_DOC_NAME} in ${topLevelCollection.id}`
-  );
 }
 
 /**
- * Create a top-level collection with the given name.
+ * Step 2: Given the reference to a db and the key for the COMPLETED_STEPS_DOC_NAME document
+ * to update, set the corresponding value to `true``.
+ *
+ * @param {firestore.Firestore} db The firestore instance.
+ * @param {string} key The key for the data contained in COMPLETED_STEPS_DOC_NAME.
+ */
+async function updateStepsCompleted(db, key) {
+  await db
+    .collection(TOP_LEVEL_COLLECTION_NAME)
+    .doc(COMPLETED_STEPS_DOC_NAME)
+    .update({ [`${key}`]: true });
+  console.log(`Updated ${COMPLETED_STEPS_DOC_NAME} and set ${key} to true`);
+}
+
+/**
+ * Step 3: Create a document called `authorInfo` under the top level collection,
+ * `TOP_LEVEL_COLLECTION_NAME`. The document contains the following data:
+ *
+ *  - `authorName`: String, The name of the implementor.
  *
  * @param {firestore.Firestore} db The firestore instance.
  */
-async function createTopLevelCollection(db) {
-  const name = "CodeNext";
-  collectionRef = db
+async function createAuthorInfo(db) {
+  const name = "Coach Lilly";
+  await db
     .collection(TOP_LEVEL_COLLECTION_NAME)
-    .doc(TEST_DOCUMENT_NAME)
+    .doc(AUTHOR_INFO_DOC_NAME)
     .set({ authorName: name });
+  await updateStepsCompleted(db, "createAuthorInfo");
+}
 
-  console.log(
-    `Created doc ${TEST_DOCUMENT_NAME} in collection ${collection}. Set authorName to "${name}"`
-  );
+/**
+ * Step 4: Create document called `RESEARCH_DOC_NAME` under the top level collection.
+ * The document contains the following data:
+ *   1. `title`: String, The title of the research.
+ *
+ * @param {firestore.Firestore} db The firestore instance.
+ */
+async function createResearchDoc(db) {
+  await db
+    .collection(TOP_LEVEL_COLLECTION_NAME)
+    .doc(RESEARCH_DOC_NAME)
+    .set({ title: "my first research" });
+  await updateStepsCompleted(db, "createResearchDoc");
+}
+
+/**
+ * Step 5: Create a subcollection under the `RESEARCH_DOC_NAME` document named
+ * `RESEARCH_ITEMS_COLLECTION_NAME`. This sub-collection should be contain 9 research
+ * items keyed by the title of the research. See README
+ * for the kind of items that should go into this collection.
+ *
+ * @param {firestore.Firestore} db The firestore instance.
+ */
+async function addResearchItems(db) {
+  let researchItems = [];
+  const testItem = new ResearchItem("Git", 3);
+  console.log(testItem.getItem()["title"]);
+  for (let i = 0; i < 9; i++) {
+    if (i < 3) {
+      researchItems.push(new ResearchItem("Git", i));
+      continue;
+    }
+    if (i < 6) {
+      researchItems.push(new ResearchItem("WebRTC", i));
+      continue;
+    }
+    researchItems.push(new ResearchItem("Firebase", i));
+  }
+
+  let promises = [];
+
+  researchItems.forEach(async (researchItem) => {
+    const item = researchItem.getItem();
+    promises.push(
+      db
+        .collection(TOP_LEVEL_COLLECTION_NAME)
+        .doc(RESEARCH_DOC_NAME)
+        .collection(RESEARCH_ITEMS_COLLECTION_NAME)
+        .doc(`${item["title"]}`)
+        .set(item)
+    );
+  });
+
+  await Promise.all(promises);
+  await updateStepsCompleted(db, "addResearchItems");
 }
 
 /**
@@ -85,13 +137,9 @@ async function createTopLevelCollection(db) {
  *
  * @param {firebase.firestore.Firestore} db The firestore instance.
  */
-export function Run(db) {
-  const topLevelCollection = createTopLevelCollection(db);
-
-  const stepsCompletedDoc = createStepsCompletedDoc(db);
-  const researchItemsCollection = createResearchItemsCollection(
-    topLevelCollection,
-    stepsCompletedDoc
-  );
-  allAllResearchItems(researchItemsCollection, stepsCompletedDoc);
+export async function Run(db) {
+  await setupStepsCompleted(db);
+  await createAuthorInfo(db);
+  await createResearchDoc(db);
+  await addResearchItems(db);
 }

@@ -9,105 +9,81 @@ import "firebase/firestore";
 
 import {
   TOP_LEVEL_COLLECTION_NAME,
-  TEST_DOCUMENT_NAME,
+  AUTHOR_INFO_DOC_NAME,
   COMPLETED_STEPS_DOC_NAME,
   RESEARCH_ITEMS_COLLECTION_NAME,
-} from "./constants";
+  RESEARCH_DOC_NAME,
+} from "./constants.js";
 
 /**
- * Creates a sub collection in the given top level collection.
+ * Step 1: Create a document in the top level collection named COMPLETED_STEPS_DOC_NAME.
+ * Add a data item keyed by the steps with values set to `false`.
  *
- * The create sub collection stores documents that contain info about research
- * documents we've read. Also updates the steps completed collection to reflect
- * progress.
- *
- * @param {firestore.CollectionReference} topLevelCollection The reference to
- * the top level collection.
- * @param {firestore.CollectionReference} stepsCompletedCollection The
- * reference to the collection used to track progress.
- */
-function createResearchItemsCollection(
-  topLevelCollection,
-  stepsCompletedCollection
-) {
-  throw "NotImplementedError: Implement Me!";
-  // 1. Create a collection inside the top level collection.
-
-  // 2. Update the steps completed collection
-}
-
-/**
- * Adds the required research items into the collection.
- *
- * Also updates the steps completed collection to refelect progress.
- *
- * @param {firestore.CollectionReference} researchItemsCollection The reference
- * to the collection where research items will be added.
- * @param {firestore.CollectionReference} stepsCompletedCollection The
- * reference to the collection used to track progress.
- */
-function allAllResearchItems(
-  researchItemsCollection,
-  stepsCompletedCollection
-) {
-  throw "NotImplementedError: Implement Me!";
-
-  console.log(
-    `Added ${documentsAdded} to the ${RESEARCH_ITEMS_COLLECTION_NAME}`
-  );
-}
-
-/**
- * Creates a subcollection in the given top level collection.
- *
- * Also add booleans which track progress on the exercise.
- *
- * @param {firestore.CollectionReference} topLevelCollection a reference to
- *  the top level collection.
- * @returns {firestore.CollectionReference} The reference to the created
- *  collection.
- */
-function createStepsCompletedCollection(topLevelCollection) {
-  throw "NotImplementedError: Implement Me!";
-  // 1. Create the sub collection
-
-  // 2. Populate it with required data and set appropriate values.
-}
-
-/**
- * Create a top-level collection with the given name.
- * @param {String} collectionName The name of the top level collection to
- * create.
  * @param {firestore.Firestore} db The firestore instance.
- * @returns {firestore.CollectionReference} The reference to the created
- *  collection
  */
-function createTopLevelCollection(collectionName, db) {
+async function setupStepsCompleted(db) {
+  // TODO: Implement.
   throw "NotImplementedError: Implement Me!";
-  // 1. Create collection
-
-  // 2. Add required data
 }
 
 /**
- * Implements all required functionality.
+ * Step 2: Given the reference to a db and the key for the COMPLETED_STEPS_DOC_NAME document
+ * to update, set the corresponding value to `true``.
+ *
+ * @param {firestore.Firestore} db The firestore instance.
+ * @param {string} key The key for the data contained in COMPLETED_STEPS_DOC_NAME.
+ */
+async function updateStepsCompleted(db, key) {
+  // TODO: Implement.
+  throw "NotImplementedError: Implement Me!";
+}
+
+/**
+ * Step 3: Create a document called `authorInfo` under the top level collection,
+ * `TOP_LEVEL_COLLECTION_NAME`. The document contains the following data:
+ *
+ *  - `authorName`: String, The name of the implementor.
+ *
+ * @param {firestore.Firestore} db The firestore instance.
+ */
+async function createAuthorInfo(db) {
+  // TODO: Implement.
+  throw "NotImplementedError: Implement Me!";
+}
+
+/**
+ * Step 4: Create document called `RESEARCH_DOC_NAME` under the top level collection.
+ * The document contains the following data:
+ *   1. `title`: String, The title of the research.
+ *
+ * @param {firestore.Firestore} db The firestore instance.
+ */
+async function createResearchDoc(db) {
+  // TODO: Implement.
+  throw "NotImplementedError: Implement Me!";
+}
+
+/**
+ * Step 5: Create a subcollection under the `RESEARCH_DOC_NAME` document named
+ * `RESEARCH_ITEMS_COLLECTION_NAME`. This sub-collection should be contain 9 research
+ * items keyed by the title of the research. See README
+ * for the kind of items that should go into this collection.
+ *
+ * @param {firestore.Firestore} db The firestore instance.
+ */
+async function addResearchItems(db) {
+  // TODO: Implement.
+  throw "NotImplementedError: Implement Me!";
+}
+
+/**
+ * Runs all the methods required to implement. DO NOT EDIT!
  *
  * @param {firebase.firestore.Firestore} db The firestore instance.
  */
-export function Run(db) {
-  const topLevelCollection = createTopLevelCollection(
-    TOP_LEVEL_COLLECTION_NAME,
-    db
-  );
-
-  const stepsCompletedCollection = createStepsCompletedCollection(
-    topLevelCollection
-  );
-
-  const researchItemsCollection = createResearchItemsCollection(
-    topLevelCollection,
-    stepsCompletedCollection
-  );
-
-  allAllResearchItems(researchItemsCollection, stepsCompletedCollection);
+export async function Run(db) {
+  await setupStepsCompleted(db);
+  await createAuthorInfo(db);
+  await createResearchDoc(db);
+  await addResearchItems(db);
 }
