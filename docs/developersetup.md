@@ -49,7 +49,7 @@ Adds all modified and new (untracked) files in the current directory and all sub
 * `git push --force`
 Overwrites remote branch.
 WARNING: Use with care. Ensure that your reviewer hasn't added any commits to your PR on github. Otherwise if you `--force` you'll be blowing away their changes.
-### Additional Reading
+### Next Steps
 
 * Testing Locally --> links to https://github.com/mellychat/webapp/blob/mainline/README.md
 * Deploying to Firebase --> links to https://github.com/mellychat/webapp/blob/mainline/docs/firebase.md
