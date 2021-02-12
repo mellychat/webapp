@@ -30,7 +30,7 @@ This page contains information about how to set up your local environment to dev
   `git fetch upstream`
   `git checkout mainline`
   `git merge upstream/mainline`
-
+TIP: ONLY when on the `mainline` branch, you can use `git pull upstream mainline` instead of the previous three commands.
 2. Create a new branch on which you will make whatever changes you want with:
 `git checkout -b my-feature-branch`
 
