@@ -13,6 +13,7 @@ import {
   COMPLETED_STEPS_DOC_NAME,
   RESEARCH_ITEMS_COLLECTION_NAME,
   RESEARCH_DOC_NAME,
+  UNIMPLEMENTED_ERROR,
 } from "./constants.js";
 
 /**
@@ -21,9 +22,9 @@ import {
  *
  * @param {firestore.Firestore} db The firestore instance.
  */
-async function setupStepsCompleted(db) {
+export async function setupStepsCompleted(db) {
   // TODO: Implement.
-  throw "NotImplementedError: Implement Me!";
+  throw new Error(UNIMPLEMENTED_ERROR);
 }
 
 /**
@@ -33,9 +34,9 @@ async function setupStepsCompleted(db) {
  * @param {firestore.Firestore} db The firestore instance.
  * @param {string} key The key for the data contained in COMPLETED_STEPS_DOC_NAME.
  */
-async function updateStepsCompleted(db, key) {
+export async function updateStepsCompleted(db, key) {
   // TODO: Implement.
-  throw "NotImplementedError: Implement Me!";
+  throw new Error(UNIMPLEMENTED_ERROR);
 }
 
 /**
@@ -46,9 +47,9 @@ async function updateStepsCompleted(db, key) {
  *
  * @param {firestore.Firestore} db The firestore instance.
  */
-async function createAuthorInfo(db) {
+export async function createAuthorInfo(db) {
   // TODO: Implement.
-  throw "NotImplementedError: Implement Me!";
+  throw new Error(UNIMPLEMENTED_ERROR);
 }
 
 /**
@@ -58,9 +59,9 @@ async function createAuthorInfo(db) {
  *
  * @param {firestore.Firestore} db The firestore instance.
  */
-async function createResearchDoc(db) {
+export async function createResearchDoc(db) {
   // TODO: Implement.
-  throw "NotImplementedError: Implement Me!";
+  throw new Error(UNIMPLEMENTED_ERROR);
 }
 
 /**
@@ -71,19 +72,7 @@ async function createResearchDoc(db) {
  *
  * @param {firestore.Firestore} db The firestore instance.
  */
-async function addResearchItems(db) {
+export async function addResearchItems(db) {
   // TODO: Implement.
-  throw "NotImplementedError: Implement Me!";
-}
-
-/**
- * Runs all the methods required to implement. DO NOT EDIT!
- *
- * @param {firebase.firestore.Firestore} db The firestore instance.
- */
-export async function Run(db) {
-  await setupStepsCompleted(db);
-  await createAuthorInfo(db);
-  await createResearchDoc(db);
-  await addResearchItems(db);
+  throw new Error(UNIMPLEMENTED_ERROR);
 }
