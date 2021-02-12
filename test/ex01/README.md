@@ -15,33 +15,36 @@ Firestore Javascript SDK. When you are don you will know:
 Your code must do all of the following tasks. We've created a test suite that
 will check that each tasks is done.
 
-1.  Create a top level collection called `exercise01TopLevelCollection` which
-    contains a Document called `testDocument`, the document contains the
-    following data:
+1. Create a top level collection called `TOP_LEVEL_COLLECTION_NAME` that
+   contains a document named `COMPLETED_STEPS_DOC_NAME`. This document contains
+   data keyed by these function names: `createAuthorInfo`, `createResearchDoc`,
+   and `addResearchItems`. Their values should be set to `false`.
 
-    1. `authorName`: String, The name of the implementor.
+2. Complete the `updateStepsCompleted` method. This function takes a reference
+   to the database and a key to the data stored in the `COMPLETED_STEPS_DOC_NAME`
+   document and sets its corresponding value to `true`. You will call this method
+   at the end of each of the methods you implement in steps 3, 4, and 5.
 
-2.  Add document called `stepsCompleted` to your top level collection. It
-    must contain the following data:
+3. Create a document called `AUTHOR_INFO_DOC_NAME` under the top level collection.
+   The document contains the following data:
 
-    1. `createdATopLevelCollection`: Boolean, Set when you create your
-       top-level collection
-    2. `addADocumentInTopLevelCollection`: Boolean, Set when you add datum
-       (see above) to your top-level collection
-    3. `createdResearchItemsSubCollection`: Boolean, Set when you create
-       your `researchItemsCollection` sub collection
-    4. `addedAllResearchDocuments`: Boolean, Set when you all documents
-       to the `researchItemsCollection` sub collection
+   1. `authorName`: String, The name of the implementor.
 
-3.  Add a subcollection to your top level collection. This sub-collection
-    should be named `researchItemsCollection`. It should contain 9 research items
-    (see the [Research Document](#research-items) for details). For each item,
-    create a Firestore document with the following data:
-    1. `title`: String, The title of the document
-    2. `category`: String, Must be one of: `GIT`, `WebRTC`, or `Firebase`
-    3. `url`: String, The URL of the document
-    4. `summary`: String, A 30 word summary of the document you read.
-    5. `date`: String, The date you read the document
+4. Create document called `RESEARCH_DOC_NAME` under the top level collection. The
+   document contains the following data:
+
+   1. `title`: String, The title of the research.
+
+5. Create a subcollection under the `RESEARCH_DOC_NAME` document named
+   `RESEARCH_ITEMS_COLLECTION_NAME`. This sub-collection should be contain 9 research
+   items keyed by the title of the research.
+   (see the [Research Document](#research-items) for details). For each item,
+   create a document with the following data:
+   1. `title`: String, The title of the document
+   2. `category`: String, Must be one of: `GIT`, `WebRTC`, or `Firebase`
+   3. `url`: String, The URL of the document
+   4. `summary`: String, A 30 word summary of the document you read.
+   5. `date`: String, The date you read the document
 
 ### Research Items
 

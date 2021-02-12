@@ -9,7 +9,7 @@
     "start:local": "firebase serve -P dev --only hosting",
     "stop:firebase": "lsof -ti :5000-5003 | xargs --no-run-if-empty kill",
     "pretest": "npm run stop:firebase",
-    "test": "env FIRESTORE_EMULATOR_HOST=localhost:5002 firebase emulators:exec \"mocha --recursive test/**/*.js --require esm --exit\""
+    "test": "env FIRESTORE_EMULATOR_HOST=localhost:5002 firebase emulators:exec \"mocha  --timeout 10000 --recursive test/**/*.js --require esm --exit\""
   },
   "devDependencies": {
     "@firebase/rules-unit-testing": "^1.1.9",
