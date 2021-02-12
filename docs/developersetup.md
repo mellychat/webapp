@@ -8,7 +8,7 @@ This page contains information about how to set up your local environment to dev
 1. [Install Homebrew](https://brew.sh)
 2. [Install Docker](https://docs.docker.com/get-docker/)
 3. [Install Git](https://git-scm.com/downloads)
-4. Install IDE
+4. Install IDE: We prefer [VSCode](https://code.visualstudio.com/download) as it's integrated into our dev workflows (e.g. extensions, container dev, etc)
 
 ## Git Setup
 ---
@@ -53,4 +53,3 @@ Overwrites remote branch.
 
 * Testing Locally --> links to https://github.com/mellychat/webapp/blob/mainline/README.md
 * Deploying to Firebase --> links to https://github.com/mellychat/webapp/blob/mainline/docs/firebase.md
-
