@@ -32,7 +32,7 @@ class ResearchItem {
  *
  * @param {firestore.Firestore} db The firestore instance.
  */
-async function setupStepsCompleted(db) {
+export async function setupStepsCompleted(db) {
   return await db
     .collection(TOP_LEVEL_COLLECTION_NAME)
     .doc(COMPLETED_STEPS_DOC_NAME)
@@ -50,7 +50,7 @@ async function setupStepsCompleted(db) {
  * @param {firestore.Firestore} db The firestore instance.
  * @param {string} key The key for the data contained in COMPLETED_STEPS_DOC_NAME.
  */
-async function updateStepsCompleted(db, key) {
+export async function updateStepsCompleted(db, key) {
   await db
     .collection(TOP_LEVEL_COLLECTION_NAME)
     .doc(COMPLETED_STEPS_DOC_NAME)
@@ -66,7 +66,7 @@ async function updateStepsCompleted(db, key) {
  *
  * @param {firestore.Firestore} db The firestore instance.
  */
-async function createAuthorInfo(db) {
+export async function createAuthorInfo(db) {
   const name = "Coach Lilly";
   await db
     .collection(TOP_LEVEL_COLLECTION_NAME)
@@ -82,7 +82,7 @@ async function createAuthorInfo(db) {
  *
  * @param {firestore.Firestore} db The firestore instance.
  */
-async function createResearchDoc(db) {
+export async function createResearchDoc(db) {
   await db
     .collection(TOP_LEVEL_COLLECTION_NAME)
     .doc(RESEARCH_DOC_NAME)
@@ -98,7 +98,7 @@ async function createResearchDoc(db) {
  *
  * @param {firestore.Firestore} db The firestore instance.
  */
-async function addResearchItems(db) {
+export async function addResearchItems(db) {
   let researchItems = [];
   const testItem = new ResearchItem("Git", 3);
   console.log(testItem.getItem()["title"]);
@@ -130,16 +130,4 @@ async function addResearchItems(db) {
 
   await Promise.all(promises);
   await updateStepsCompleted(db, "addResearchItems");
-}
-
-/**
- * Implements all required functionality.
- *
- * @param {firebase.firestore.Firestore} db The firestore instance.
- */
-export async function Run(db) {
-  await setupStepsCompleted(db);
-  await createAuthorInfo(db);
-  await createResearchDoc(db);
-  await addResearchItems(db);
 }
