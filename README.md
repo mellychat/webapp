@@ -53,4 +53,4 @@ documentation.
 
 ## Next Steps
 
-Developer setup: https://github.com/mellychat/webapp/blob/mainline/docs/developersetup.md
+1. [Setup your dev environment](https://github.com/mellychat/webapp/blob/mainline/docs/developersetup.md)
