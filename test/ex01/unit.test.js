@@ -7,23 +7,23 @@ import { expect } from "chai";
 import {
   initializeTestApp,
   clearFirestoreData,
-  assertSucceeds,
 } from "@firebase/rules-unit-testing";
 import { firestore } from "firebase";
 
 import {
   TOP_LEVEL_COLLECTION_NAME,
-  TEST_DOCUMENT_NAME,
+  AUTHOR_INFO_DOC_NAME,
   COMPLETED_STEPS_DOC_NAME,
   RESEARCH_ITEMS_COLLECTION_NAME,
-  PROJECT_ID,
+  RESEARCH_DOC_NAME,
   FIRESTORE_EMULATOR_PORT,
+  PROJECT_ID,
 } from "./constants.js";
 
-// Add a statement with your solutions
+// TODO: Add a statement with your solutions
 import { Run as solution } from "./solution";
 
-// And add it to the list of test suites.
+// TODO: add it to the list of test suites.
 const testSuites = [{ name: "Solution", runImpl: solution }];
 
 /**
@@ -43,59 +43,97 @@ function runTestSuites() {
     describe(`Suite: ${suiteDefinition.name}: Unit Test`, function () {
       // Run the specific suite with the given database.
       const db = getFirestore();
-      suiteDefinition.runImpl(db);
-
-      // Actually check the results.
-      it(`should create a ${TOP_LEVEL_COLLECTION_NAME} document with required data items`, async function () {
-        const wantDocRef = db
-          .collection(TOP_LEVEL_COLLECTION_NAME)
-          .doc(TEST_DOCUMENT_NAME);
-        const doc = await wantDocRef.get();
-
-        expect(
-          doc.exists,
-          `Either the collection ("${TOP_LEVEL_COLLECTION_NAME}") or the document ("${TEST_DOCUMENT_NAME}") does not exist.`
-        ).to.be.equal(true);
-        expect(doc.get("authorName")).to.be.a("string", "authorName").that.is
-          .not.empty;
+      before(function (done) {
+        suiteDefinition.runImpl(db).then(() => {
+          done();
+        });
       });
 
-      it(`should create a ${COMPLETED_STEPS_DOC_NAME} document`, async function () {
-        const wantDocRef = db
+      // Actually check the results.
+      it(`should create a ${TOP_LEVEL_COLLECTION_NAME} document with author information`, async function () {
+        const author = await db
           .collection(TOP_LEVEL_COLLECTION_NAME)
-          .doc(COMPLETED_STEPS_DOC_NAME);
-        const doc = await wantDocRef.get();
+          .doc(AUTHOR_INFO_DOC_NAME)
+          .get();
+
         expect(
-          doc.exists,
+          author.exists,
+          `Either the collection ("${TOP_LEVEL_COLLECTION_NAME}") or the document ("${AUTHOR_INFO_DOC_NAME}") does not exist.`
+        ).to.be.equal(true);
+        expect(author.data()["authorName"]).to.be.a("string", "authorName");
+      });
+
+      it(`${COMPLETED_STEPS_DOC_NAME} document should have all the values set to true`, async function () {
+        const stepsCompletedDoc = await db
+          .collection(TOP_LEVEL_COLLECTION_NAME)
+          .doc(COMPLETED_STEPS_DOC_NAME)
+          .get();
+
+        expect(
+          stepsCompletedDoc.exists,
           `Either the collection ("${TOP_LEVEL_COLLECTION_NAME}") or the document ("${COMPLETED_STEPS_DOC_NAME}") does not exist.`
         ).to.be.equal(true);
 
-        [
-          "createdATopLevelCollection",
-          "addADocumentInTopLevelCollection",
-          // TODO: Uncomment to validate these bools are set after implementing
-          // the remaining methods.
-          // "createdResearchItemsSubCollection",
-          // "addedAllResearchDocuments",
-        ].forEach((fieldName) => {
-          expect(doc.get(fieldName))
+        for (const [key, value] of Object.entries(stepsCompletedDoc.data())) {
+          expect(value)
             .to.be.a("boolean")
-            .that.is.equal(true, `${fieldName} should be true`);
-        });
+            .that.is.equal(true, `${key} should be true`);
+        }
       });
 
-      it.skip(`should create a ${RESEARCH_ITEMS_COLLECTION_NAME} collection.`, async () => {});
-      it.skip(
-        `should create 9 research documents in the ${RESEARCH_ITEMS_COLLECTION_NAME} collection.`
-      );
+      it(`should create a document named ${RESEARCH_DOC_NAME}`, async function () {
+        const firstResearchDoc = await db
+          .collection(TOP_LEVEL_COLLECTION_NAME)
+          .doc(RESEARCH_DOC_NAME)
+          .get();
+
+        expect(
+          firstResearchDoc.exists,
+          `Either the collection ("${TOP_LEVEL_COLLECTION_NAME}") or the document ("${RESEARCH_DOC_NAME}") does not exist.`
+        ).to.be.equal(true);
+      });
+
+      it(`should create a ${RESEARCH_DOC_NAME} document with required 9 data items`, async function () {
+        const firstResearchItemsCollectionRef = db
+          .collection(TOP_LEVEL_COLLECTION_NAME)
+          .doc(RESEARCH_DOC_NAME)
+          .collection(RESEARCH_ITEMS_COLLECTION_NAME);
+
+        const collection = await firstResearchItemsCollectionRef.get();
+
+        expect(collection.size, "There should be 9 research items").to.be.equal(
+          9
+        );
+
+        const git_query = await firstResearchItemsCollectionRef
+          .where("category", "==", "Git")
+          .get();
+        const webRtc_query = await firstResearchItemsCollectionRef
+          .where("category", "==", "WebRTC")
+          .get();
+        const firebase_query = await firstResearchItemsCollectionRef
+          .where("category", "==", "Firebase")
+          .get();
+
+        expect(
+          git_query.size,
+          "There should be 3 Git research items"
+        ).to.be.equal(3);
+        expect(
+          webRtc_query.size,
+          "There should be 3 WebRTC research items"
+        ).to.be.equal(3);
+        expect(
+          firebase_query.size,
+          "There should be 3 Firebase research items"
+        ).to.be.equal(3);
+      });
 
       // Teardown firestore test instance.
-      after(function (done) {
-        clearFirestoreData({
+      after(async function () {
+        await clearFirestoreData({
           projectId: PROJECT_ID,
         });
-
-        done();
       });
     });
   });
