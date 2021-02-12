@@ -8,3 +8,4 @@ export const RESEARCH_DOC_NAME = "researchDocument";
 export const RESEARCH_ITEMS_COLLECTION_NAME = "researchItemsCollection";
 export const PROJECT_ID = "mellychat-dev";
 export const FIRESTORE_EMULATOR_PORT = 5002;
+export const UNIMPLEMENTED_ERROR = "UnimplementedError: Implement Me!";

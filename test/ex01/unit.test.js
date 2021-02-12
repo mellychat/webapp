@@ -18,13 +18,18 @@ import {
   RESEARCH_DOC_NAME,
   FIRESTORE_EMULATOR_PORT,
   PROJECT_ID,
+  UNIMPLEMENTED_ERROR,
 } from "./constants.js";
 
 // TODO: Add a statement with your solutions
-import { Run as solution } from "./solution";
+import * as MY_SOLUTION from "./solution";
+import * as TEMPLATE_SOLUTION from "./template";
 
 // TODO: add it to the list of test suites.
-const testSuites = [{ name: "Solution", runImpl: solution }];
+const testSuites = [
+  { name: "My Solution", solution: MY_SOLUTION },
+  { name: "Template Solution", solution: TEMPLATE_SOLUTION },
+];
 
 /**
  * Initializes a test instance of Firebase Firestore emulators.
@@ -39,18 +44,26 @@ function getFirestore() {
 }
 
 function runTestSuites() {
-  testSuites.forEach((suiteDefinition) => {
-    describe(`Suite: ${suiteDefinition.name}: Unit Test`, function () {
-      // Run the specific suite with the given database.
+  testSuites.forEach((testSuite) => {
+    describe(`Suite: ${testSuite.name}: Unit Test`, function () {
       const db = getFirestore();
       before(function (done) {
-        suiteDefinition.runImpl(db).then(() => {
-          done();
-        });
+        // Run the set up method.
+        testSuite.solution
+          .setupStepsCompleted(db)
+          .then((resolve) => done())
+          .catch((err) => {
+            console.log(err);
+            done();
+          });
       });
 
       // Actually check the results.
       it(`should create a ${TOP_LEVEL_COLLECTION_NAME} document with author information`, async function () {
+        // Run the method
+        await testSuite.solution.createAuthorInfo(db);
+
+        // Validate the db
         const author = await db
           .collection(TOP_LEVEL_COLLECTION_NAME)
           .doc(AUTHOR_INFO_DOC_NAME)
@@ -63,25 +76,11 @@ function runTestSuites() {
         expect(author.data()["authorName"]).to.be.a("string", "authorName");
       });
 
-      it(`${COMPLETED_STEPS_DOC_NAME} document should have all the values set to true`, async function () {
-        const stepsCompletedDoc = await db
-          .collection(TOP_LEVEL_COLLECTION_NAME)
-          .doc(COMPLETED_STEPS_DOC_NAME)
-          .get();
-
-        expect(
-          stepsCompletedDoc.exists,
-          `Either the collection ("${TOP_LEVEL_COLLECTION_NAME}") or the document ("${COMPLETED_STEPS_DOC_NAME}") does not exist.`
-        ).to.be.equal(true);
-
-        for (const [key, value] of Object.entries(stepsCompletedDoc.data())) {
-          expect(value)
-            .to.be.a("boolean")
-            .that.is.equal(true, `${key} should be true`);
-        }
-      });
-
       it(`should create a document named ${RESEARCH_DOC_NAME}`, async function () {
+        // Run the method
+        await testSuite.solution.createResearchDoc(db);
+
+        // Validate the db
         const firstResearchDoc = await db
           .collection(TOP_LEVEL_COLLECTION_NAME)
           .doc(RESEARCH_DOC_NAME)
@@ -94,6 +93,10 @@ function runTestSuites() {
       });
 
       it(`should create a ${RESEARCH_DOC_NAME} document with required 9 data items`, async function () {
+        // Run the method
+        await testSuite.solution.addResearchItems(db);
+
+        // Validate the db
         const firstResearchItemsCollectionRef = db
           .collection(TOP_LEVEL_COLLECTION_NAME)
           .doc(RESEARCH_DOC_NAME)
@@ -127,6 +130,25 @@ function runTestSuites() {
           firebase_query.size,
           "There should be 3 Firebase research items"
         ).to.be.equal(3);
+      });
+
+      it(`${COMPLETED_STEPS_DOC_NAME} document should have all the values set to true`, async function () {
+        // Validate the db
+        const stepsCompletedDoc = await db
+          .collection(TOP_LEVEL_COLLECTION_NAME)
+          .doc(COMPLETED_STEPS_DOC_NAME)
+          .get();
+
+        expect(
+          stepsCompletedDoc.exists,
+          `Either the collection ("${TOP_LEVEL_COLLECTION_NAME}") or the document ("${COMPLETED_STEPS_DOC_NAME}") does not exist.`
+        ).to.be.equal(true);
+
+        for (const [key, value] of Object.entries(stepsCompletedDoc.data())) {
+          expect(value)
+            .to.be.a("boolean")
+            .that.is.equal(true, `${key} should be true`);
+        }
       });
 
       // Teardown firestore test instance.
