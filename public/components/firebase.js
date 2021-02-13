@@ -17,7 +17,7 @@ let roomId = null;
 
 function init() {
   document.querySelector("#camera-btn").addEventListener("click", openUserMedia);
-  document.querySelector("#hang-up-btn").addEventListener("click", hangUp);
+  document.querySelector("#hangup-btn").addEventListener("click", hangUp);
   document.querySelector("#create-btn").addEventListener("click", createRoom);
   document.querySelector("#match-me").addEventListener("click", createAndJoin); 
   document.querySelector("#match-me").disabled = false;
@@ -113,7 +113,7 @@ function joinRoom() {
   document.querySelector("#create-btn").disabled = true;
   document.querySelector("#join-btn").disabled = true;
 
-  document.querySelector("#confirmJoinBtn").addEventListener(
+  document.querySelector("#confirm-join-btn").addEventListener(
     "click",
     async () => {
       roomId = "12345";
@@ -212,7 +212,7 @@ async function openUserMedia(e) {
   document.querySelector("#camera-btn").disabled = true;
   document.querySelector("#join-btn").disabled = false;
   document.querySelector("#create-btn").enable = true;
-  document.querySelector("#hang-up-btn").disabled = false;
+  document.querySelector("#hangup-btn").disabled = false;
 }
 
 async function hangUp(e) {
@@ -234,7 +234,7 @@ async function hangUp(e) {
   document.querySelector("#camera-btn").disabled = false;
   document.querySelector("#join-btn").disabled = true;
   document.querySelector("#create-btn").disabled = false;
-  document.querySelector("#hang-up-btn").disabled = true;
+  document.querySelector("#hangup-btn").disabled = true;
   document.querySelector("#current-room").innerText = "";
 
   // Don't delete the room, just delete the callee candidates. This lets use rejoin the room
