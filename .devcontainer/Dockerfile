@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
         curl \
         net-tools \
         apt-transport-https \
-        ca-certificates; 
+        ca-certificates \
+        openjdk-8-jre;
 
 EXPOSE 5000 5001 9005
