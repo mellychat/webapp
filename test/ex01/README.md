@@ -41,7 +41,7 @@ will check that each tasks is done.
    (see the [Research Document](#research-items) for details). For each item,
    create a document with the following data:
    1. `title`: String, The title of the document
-   2. `category`: String, Must be one of: `GIT`, `WebRTC`, or `Firebase`
+   2. `category`: String, Must be one of: `Git`, `WebRTC`, or `Firebase`
    3. `url`: String, The URL of the document
    4. `summary`: String, A 30 word summary of the document you read.
    5. `date`: String, The date you read the document
