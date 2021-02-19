@@ -1,8 +1,8 @@
 fetch("/templates/navBar.html")
     .then(stream => stream.text())
-    .then(text => label(text));
+    .then(text => defineNavBar(text));
 
-function label(html) {
+function defineNavBar(html) {
     class NavBar extends HTMLElement {
         constructor() {
             super();
@@ -12,7 +12,4 @@ function label(html) {
         }
     }
     customElements.define('nav-bar', NavBar);
-}
-
-
-
+} 
