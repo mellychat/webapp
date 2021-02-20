@@ -1,3 +1,9 @@
+.images-container {
+  display: flex !important;
+  margin-top: -50px !important;
+  margin-left: 200px !important;
+}
+
 .video {
   height: 500px;
   width: 500px;
@@ -5,12 +11,6 @@
 
 #video1 {
   margin-right: 100px;
-}
-
-.images_container {
-  display: flex;
-  margin-top: -50px;
-  margin-left: 200px;
 }
 
 .context {
