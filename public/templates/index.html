@@ -8,10 +8,6 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="Template Mo" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
-      rel="stylesheet"
-    />
 
     <title>Home | Melly</title>
     <link
@@ -20,11 +16,10 @@
       href="/assets/images/favicon.jpg"
     />
 
-    <!-- Additional CSS Files -->
+    <!-- Styles -->
     <link
       rel="stylesheet"
-      type="text/css"
-      href="/assets/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
     />
     <link
       rel="stylesheet"
@@ -36,33 +31,10 @@
       type="text/css"
       href="/assets/css/templatemo-art-factory.css"
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/assets/css/owl-carousel.css"
-    />
 
     <!-- Scripts -->
-
-    <!-- jQuery -->
-    <script defer src="/assets/js/jquery-2.1.0.min.js"></script>
-    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
-    <!-- Bootstrap -->
-    <script defer src="/assets/js/popper.js"></script>
-    <script defer src="/assets/js/bootstrap.min.js"></script>
-
-    <!-- Plugins -->
-    <script defer src="/assets/js/owl-carousel.js"></script>
-    <script defer src="/assets/js/scrollreveal.min.js"></script>
-    <script defer src="/assets/js/waypoints.min.js"></script>
-    <script defer src="/assets/js/jquery.counterup.min.js"></script>
-
-    <!-- Global Init -->
-    <script defer src="/assets/js/custom.js"></script>
-
-    <!-- Importing The Navigation Bar -->
     <script src="/components/navBar.js"></script>
+    <script defer src="/assets/js/jquery-bundle.js"></script>
   </head>
 
   <body>
@@ -123,8 +95,7 @@
         <div class="container">
           <div class="row">
             <div
-              class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12"
-              data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"
+              class="slide-right left-text col-lg-6 col-md-6 col-sm-12 col-xs-12"
             >
               <h1>Welcome To <strong>Melly</strong>!</h1>
               <p>
@@ -146,10 +117,7 @@
                 >Practitioner</a
               >
             </div>
-            <div
-              class="col-lg-6 col-md-6 col-sm-12 col-xs-12"
-              data-scroll-reveal="enter right move 30px over 0.6s after 0.4s"
-            >
+            <div class="slide-left col-lg-6 col-md-6 col-sm-12 col-xs-12">
               <img
                 src="/assets/images/virtual-conversation.jpg"
                 class="rounded img-fluid d-block mx-auto"
@@ -167,21 +135,18 @@
     <section class="section" id="about">
       <div class="container">
         <div class="row">
-          <div
-            class="col-lg-7 col-md-12 col-sm-12"
-            data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"
-          >
+          <div class="slide-right col-lg-7 col-md-12 col-sm-12">
             <img
               src="/assets/images/phone-wire.jpg"
               class="rounded img-fluid d-block mx-auto"
-              alt="App"
+              alt="Image of a woman"
             />
           </div>
-          <div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
+          <div class="slide-left col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
             <div class="left-heading">
               <h5>For Patients:</h5>
             </div>
-            <div class="left-text">
+            <div class="right-text">
               <p>
                 If you are a patient looking for quick and confidential advice
                 about health or mental health, this is a place to connect with a
@@ -204,7 +169,9 @@
     <section class="section" id="about2">
       <div class="container">
         <div class="row">
-          <div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
+          <div
+            class="left-text slide-right col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix"
+          >
             <div class="left-heading">
               <h5>For Practioners:</h5>
             </div>
@@ -249,13 +216,12 @@
             </ul>
           </div>
           <div
-            class="right-image col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix-big"
-            data-scroll-reveal="enter right move 30px over 0.6s after 0.4s"
+            class="slide-left right-image col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix-big"
           >
             <img
               src="/assets/images/laptop-image.jpg"
               class="rounded img-fluid d-block mx-auto"
-              alt="App"
+              alt="Image of a doctor"
             />
           </div>
         </div>

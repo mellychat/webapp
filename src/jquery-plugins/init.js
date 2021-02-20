@@ -1,3 +1,17 @@
+/**
+ * A webpack entrypoint that provides initialization for jQuery and related
+ * plugins.
+ */
+import "owl.carousel";
+import "owl.carousel/dist/assets/owl.carousel.min.css";
+
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import "jquery.counterup";
+
+import ScrollReveal from "scrollreveal";
+
 (function ($) {
   "use strict";
 
@@ -39,8 +53,24 @@
     }
   });
 
-  // Scroll animation init
-  window.sr = new scrollReveal();
+  // Scroll animation init. See documentation at:
+  // https://scrollrevealjs.org/api/reveal.html
+  let scrollReveal = new ScrollReveal();
+  let slideLeftAnimationOptions = {
+    origin: "right",
+    distance: "30px",
+    duration: "600",
+    delay: "400",
+  };
+  scrollReveal.reveal(".slide-left", slideLeftAnimationOptions);
+  let slideRightAnimationOptions = {
+    origin: "left",
+    distance: "30px",
+    duration: "600",
+    delay: "400",
+  };
+  scrollReveal.reveal(".slide-right", slideRightAnimationOptions);
+  window.sr = scrollReveal;
 
   // Menu Dropdown Toggle
   if ($(".menu-trigger").length) {

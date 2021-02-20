@@ -1,4 +1,7 @@
 {
+  "name": "MellyChat",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
     "clean": "rm -rf ./node_modules",
     "prereinstall": "npm run clean",
@@ -9,13 +12,26 @@
     "start:local": "firebase serve -P dev --only hosting",
     "stop:firebase": "lsof -ti :5000-5003 | xargs --no-run-if-empty kill",
     "pretest": "npm run stop:firebase",
-    "test": "env FIRESTORE_EMULATOR_HOST=\"localhost:5003\" firebase emulators:exec \"mocha test --exit\""
+    "test": "env FIRESTORE_EMULATOR_HOST=\"localhost:5003\" firebase emulators:exec \"mocha test --exit\"",
+    "build": "webpack"
   },
   "devDependencies": {
     "@firebase/rules-unit-testing": "^1.1.9",
+    "css-loader": "^5.0.2",
     "firebase": "^7.13.1",
     "firebase-tools": "^9.2.2",
     "mocha": "^8.2.1",
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.23.0",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^2.1.0",
+    "jquery.counterup": "^2.1.0",
+    "owl.carousel": "^2.3.4",
+    "popper.js": "^1.16.1",
+    "scrollreveal": "^4.0.7"
   }
 }
