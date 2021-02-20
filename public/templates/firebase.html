@@ -78,6 +78,9 @@
 
     <!-- Global Init -->
     <script defer src="/assets/js/custom.js"></script>
+
+    <!-- Importing The Navigation Bar -->
+    <script src="/components/navBar.js"></script>
   </head>
   <body>
     <div id="preloader">
@@ -88,42 +91,11 @@
       </div>
     </div>
     <!-- ***** Preloader End ***** -->
+
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <nav class="main-nav">
-              <!-- ***** Logo Start ***** -->
-              <a href="/templates/index.html" class="logo">Melly</a>
-              <!-- ***** Logo End ***** -->
-              <!-- ***** Menu Start ***** -->
-              <ul class="nav">
-                <li class="scroll-to-section">
-                  <a href="/templates/index.html" class="active">Home</a>
-                </li>
-                <li class="scroll-to-section">
-                  <a href="/templates/index.html#about">About</a>
-                </li>
-                <li class="scroll-to-section">
-                  <a href="/templates/demo.html">Demo</a>
-                </li>
-                <li class="scroll-to-section">
-                  <a href="/templates/index.html#services">Resources</a>
-                </li>
-                <li class="scroll-to-section">
-                  <a href="/templates/index.html#contact-us">Contact Us</a>
-                </li>
-              </ul>
-              <a class="menu-trigger">
-                <span>Menu</span>
-              </a>
-              <!-- ***** Menu End ***** -->
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
+    <nav-bar></nav-bar>
+    <!-- ***** Header Area End ***** -->
+
     <div id="page-div">
       <h1 class="match-header">Welcome to Melly!</h1>
       <div>
