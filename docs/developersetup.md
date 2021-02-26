@@ -43,13 +43,17 @@ TIP: ONLY when on the `mainline` branch, you can use `git pull upstream mainline
 
 ### Important Git Commands
 
+*`git rebase mainline`
+Puts the commits in your local branch on top of the last commit from mainline.
+
 * `git add .`
 Adds all modified and new (untracked) files in the current directory and all subdirectories to the staging area (a.k.a. the index), thus preparing them to be included in the next git commit.
 
 * `git push --force`
 Overwrites remote branch.
 WARNING: Use with care. Ensure that your reviewer hasn't added any commits to your PR on github. Otherwise if you `--force` you'll be blowing away their changes.
+
 ### Next Steps
 
-* Testing Locally --> links to https://github.com/mellychat/webapp/blob/mainline/README.md
-* Deploying to Firebase --> links to https://github.com/mellychat/webapp/blob/mainline/docs/firebase.md
+* [Testing Locally](https://github.com/mellychat/webapp/blob/mainline/README.md)
+* [Deploying to Firebase](https://github.com/mellychat/webapp/blob/mainline/docs/firebase.md)
