@@ -9,18 +9,19 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="Steve Leke" />
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
     <title>Sign Up |Melly</title>
 
     <!-- Icon for website tab -->
     <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="https://cdn.glitch.com/aa3eaa29-7183-4f33-b4e2-c3a30c833a25%2F31540120.jpg?v=1598133005255"
+      rel="shortcut icon" 
+      type="image/x-icon" 
+      href="/assets/images/favicon.jpg" />
     />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+
 
     <!-- Import font style -->
     <link
@@ -149,28 +150,28 @@
                 />
               </div>
             </div>
-            <!-- ***** Top Row End ***** -->
-            <!-- Input field for description of issue -->
+            <!-- Input field for last name -->
             <div class="field-wrap">
-              <textarea
-                id="text-area"
-                name="paragraph-text"
-                placeholder="Please give a short description of your issue."
-                cols="50"
-                rows="10"
-                maxlength="300"
-                required
-              ></textarea>
-              <button type="submit" id="button" class="button button-block">
-                <span style="color: #fff">Match Me!</span>
-              </button>
+              <label>Last Name<span class="req">*</span> </label>
+              <input type="text" id="last-name" name="last-name" maxlength="15" autocomplete="off" required />
             </div>
-          </form>
-        </div>
-        <!-- ***** Sign Up Area End ***** -->
+          </div>
+          <!-- ***** Top Row End ***** -->
+          <!-- Input field for description of issue -->
+          <div class="field-wrap">
+            <textarea id="text-area" name="paragraph-text" placeholder="Please give a short description of your issue."
+              cols="50" rows="10" maxlength="300" required></textarea>
+            <button type="submit" id="button" class="button button-block">
+              <span style="color: #fff">Match Me!</span>
+            </button>
+          </div>
+        </form>
       </div>
-      <!-- ***** Tab Content End ***** -->
+      <!-- ***** Sign Up Area End ***** -->
     </div>
-    <!-- ***** Form End ***** -->
-  </body>
+    <!-- ***** Tab Content End ***** -->
+  </div>
+  <!-- ***** Form End ***** -->
+</body>
+
 </html>

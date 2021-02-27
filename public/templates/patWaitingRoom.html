@@ -10,8 +10,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <!--     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"> -->
   <title>Waiting Room | Melly</title>
-  <link rel="shortcut icon" type="image/x-icon"
-    href="https://cdn.glitch.com/aa3eaa29-7183-4f33-b4e2-c3a30c833a25%2F31540120.jpg?v=1598133005255" />
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.jpg" />
 
   <!--     Firebase Web RTC  -->
   <script defer src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
@@ -32,18 +31,18 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/owl-carousel.css" />
 
   <!--     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet"> -->
-  
+
   <!-- Scripts -->
 
   <!-- JavaScript -->
   <script defer src="/components/app.js"></script>
   <!-- jQuery -->
   <script defer src="/assets/js/jquery-2.1.0.min.js"></script>
-  
+
   <!-- Bootstrap -->
   <script defer src="/assets/js/popper.js"></script>
   <script defer src="/assets/js/bootstrap.min.js"></script>
-  
+
   <!-- Plugins -->
   <script defer src="/assets/js/owl-carousel.js"></script>
   <script defer src="/assets/js/scrollreveal.min.js"></script>
@@ -127,12 +126,12 @@
     <!--   <div>
       <span id="currentRoom"></span>
   </div> -->
-      <div id="videos">
-        <!--Second child-->
-        <video id="local-video" muted autoplay playsinline></video>
-        <video hidden id="remote-video" autoplay playsinline></video>
-      </div>
+    <div id="videos">
+      <!--Second child-->
+      <video id="local-video" muted autoplay playsinline></video>
+      <video hidden id="remote-video" autoplay playsinline></video>
     </div>
+  </div>
 
   </div>
 
@@ -152,19 +151,11 @@
             <div class="mdc-line-ripple"></div>
           </div>
           <footer class="mdc-dialog__actions">
-            <button
-              type="button"
-              class="mdc-button mdc-dialog__button"
-              data-mdc-dialog-action="no"
-            >
+            <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no">
               <span class="mdc-button__label">Cancel</span>
             </button>
-            <button
-              id="confirm-join-btn"
-              type="button"
-              class="mdc-button mdc-dialog__button"
-              data-mdc-dialog-action="yes"
-            >
+            <button id="confirm-join-btn" type="button" class="mdc-button mdc-dialog__button"
+              data-mdc-dialog-action="yes">
               <span class="mdc-button__label">Join</span>
             </button>
           </footer>
