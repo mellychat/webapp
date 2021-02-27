@@ -26,8 +26,7 @@ webapp
 
 ## Developing for MellyChat {#hack-mellychat}
 
-1. TODO: Document details for developer setup.
-2. TODO: Document dev workflow (git flow, expectations for PRs)
+TODO: Document dev workflow (git flow, expectations for PRs)
 
 Development workflows are heavily tied to VS Code. The project uses
 Docker-based remote dev containers and VSCode extensions that make setup and
@@ -51,3 +50,7 @@ You may also run the tests. For details on testing see the
 documentation.
 
 > npm test
+
+## Next Steps
+
+1. [Setup your dev environment](https://github.com/mellychat/webapp/blob/mainline/docs/developersetup.md)
