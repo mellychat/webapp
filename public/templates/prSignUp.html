@@ -15,11 +15,8 @@
     />
 
     <title>Sign Up |Melly</title>
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="https://cdn.glitch.com/aa3eaa29-7183-4f33-b4e2-c3a30c833a25%2F31540120.jpg?v=1598133005255"
-    />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.jpg" />
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/assets/css/prSignUp.css" />
@@ -124,81 +121,77 @@
             </div>
 
             <div class="field-wrap">
-              <label> Email Address<span class="req">*</span> </label>
-              <input name="email" type="email" autocomplete="off" required />
+              <label> First Name<span class="req">*</span> </label>
+              <input name="first-name" type="text" autocomplete="off" required />
             </div>
 
             <div class="field-wrap">
-              <label> Password<span class="req">*</span> </label>
-              <input
-                name="password"
-                type="password"
-                autocomplete="off"
-                required
-              />
+              <label> Last Name<span class="req">*</span> </label>
+              <input name="last-name" type="text" autocomplete="off" required />
             </div>
+          </div>
 
-            <div class="field-wrap">
-              <label> Physical Address<span class="req">*</span> </label>
-              <input name="address" autocomplete="off" required />
-            </div>
+          <div class="field-wrap">
+            <label> Email Address<span class="req">*</span> </label>
+            <input name="email" type="email" autocomplete="off" required />
+          </div>
 
-            <div class="field-wrap">
-              <label> Phone Number<span class="req">*</span> </label>
-              <input
-                name="phone-number"
-                type="tel"
-                autocomplete="off"
-                required
-              />
-            </div>
+          <div class="field-wrap">
+            <label> Password<span class="req">*</span> </label>
+            <input name="password" type="password" autocomplete="off" required />
+          </div>
 
-            <div class="field-wrap">
-              <h2 id="file-text">
-                Upload a PDF containing photocopies of your resume, degrees, and
-                medical licenses. <span class="req">*</span>
-              </h2>
-              <input
-                type="file"
-                id="file"
-                autocomplete="off"
-                name="filename"
-                required
-              />
-            </div>
+          <div class="field-wrap">
+            <label> Physical Address<span class="req">*</span> </label>
+            <input name="address" autocomplete="off" required />
+          </div>
 
-            <!-- ***** Successful sign up takes user to prWaitingRoom. ***** -->
-            <button type="submit" class="button button-block">
-              <a href="prWaitingRoom.html" style="color: #fff">Get Started!</a>
-            </button>
-          </form>
-        </div>
-        <!-- ***** Sign Up Form End ***** -->
+          <div class="field-wrap">
+            <label> Phone Number<span class="req">*</span> </label>
+            <input name="phone-number" type="tel" autocomplete="off" required />
+          </div>
 
-        <!-- ***** Login Form Start ***** -->
-        <div id="login">
-          <h1 id="welcome-back">Welcome Back!</h1>
+          <div class="field-wrap">
+            <h2 id="file-text">
+              Upload a PDF containing photocopies of your resume, degrees, and
+              medical licenses. <span class="req">*</span>
+            </h2>
+            <input type="file" id="file" autocomplete="off" name="filename" required />
+          </div>
 
-          <form action="/" method="post">
-            <div class="field-wrap">
-              <label> Email Address<span class="req">*</span> </label>
-              <input type="email" required autocomplete="off" />
-            </div>
-
-            <div class="field-wrap">
-              <label> Password<span class="req">*</span> </label>
-              <input type="password" required autocomplete="off" />
-            </div>
-            <p class="forgot"><a href="#">Forgot Password?</a></p>
-            <button type="submit" class="button button-block">
-              <a href="prWaitingRoom.html" style="color: #fff">Log In!</a>
-            </button>
-          </form>
-          <!-- ***** Login Form End ***** -->
-        </div>
+          <!-- ***** Successful sign up takes user to prWaitingRoom. ***** -->
+          <button type="submit" class="button button-block">
+            <a href="prWaitingRoom.html" style="color: #fff">Get Started!</a>
+          </button>
+        </form>
       </div>
-      <!-- tab-content -->
+      <!-- ***** Sign Up Form End ***** -->
+
+      <!-- ***** Login Form Start ***** -->
+      <div id="login">
+        <h1 id="welcome-back">Welcome Back!</h1>
+
+        <form action="/" method="post">
+          <div class="field-wrap">
+            <label> Email Address<span class="req">*</span> </label>
+            <input type="email" required autocomplete="off" />
+          </div>
+
+          <div class="field-wrap">
+            <label> Password<span class="req">*</span> </label>
+            <input type="password" required autocomplete="off" />
+          </div>
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+          <button type="submit" class="button button-block">
+            <a href="prWaitingRoom.html" style="color: #fff">Log In!</a>
+          </button>
+        </form>
+        <!-- ***** Login Form End ***** -->
+      </div>
     </div>
-    <!-- ***** Form End ***** -->
-  </body>
+    <!-- tab-content -->
+  </div>
+  <!-- ***** Form End ***** -->
+</body>
+
 </html>
