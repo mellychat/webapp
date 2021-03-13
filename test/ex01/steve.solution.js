@@ -24,7 +24,14 @@ import {
  */
 export async function setupStepsCompleted(db) {
   // TODO: Implement.
-  throw new Error(UNIMPLEMENTED_ERROR);
+  await db
+  .collection(TOP_LEVEL_COLLECTION_NAME)
+  .doc(COMPLETED_STEPS_DOC_NAME)
+  .set({
+    createAuthorInfo: false,
+    createResearchDoc: false,
+    addResearchItems: false,
+  });
 }
 
 /**
@@ -36,7 +43,12 @@ export async function setupStepsCompleted(db) {
  */
 export async function updateStepsCompleted(db, key) {
   // TODO: Implement.
-  throw new Error(UNIMPLEMENTED_ERROR);
+  await db
+  .collection(TOP_LEVEL_COLLECTION_NAME)
+  .doc(COMPLETED_STEPS_DOC_NAME)
+  .update({
+    [`${key}`]: true,
+  });
 }
 
 /**
@@ -49,7 +61,13 @@ export async function updateStepsCompleted(db, key) {
  */
 export async function createAuthorInfo(db) {
   // TODO: Implement.
-  throw new Error(UNIMPLEMENTED_ERROR);
+  let authorInfo = db.collection(TOP_LEVEL_COLLECTION_NAME).doc(AUTHOR_INFO_DOC_NAME);
+  await authorInfo
+  .set({
+    'authorName': 'Steve Leke'
+  });
+
+  await updateStepsCompleted(db, "createAuthorInfo");
 }
 
 /**
@@ -61,7 +79,12 @@ export async function createAuthorInfo(db) {
  */
 export async function createResearchDoc(db) {
   // TODO: Implement.
-  throw new Error(UNIMPLEMENTED_ERROR);
+  let researchDoc= db.collection(TOP_LEVEL_COLLECTION_NAME).doc(RESEARCH_DOC_NAME);
+  await researchDoc
+  .set({
+    'title': 'Research'
+  });
+  await updateStepsCompleted(db, "createResearchDoc");
 }
 
 /**
