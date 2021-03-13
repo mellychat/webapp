@@ -4,8 +4,7 @@
  * @Author: Your Name
  * @Date: 2021/01/DD
  */
-
-import firebase, { firestore } from "firebase/app";
+import firebase from "firebase/app";
 import "firebase/firestore";
 
 import {
@@ -25,7 +24,13 @@ import {
  */
 export async function setupStepsCompleted(db) {
   // TODO: Implement.
-  throw new Error(UNIMPLEMENTED_ERROR);
+  let topLevelCollection = db.collection(TOP_LEVEL_COLLECTION_NAME);
+  let completedSteps = topLevelCollection.doc(COMPLETED_STEPS_DOC_NAME);
+  return await completedSteps.set({
+    createAuthorInfo: false,
+    addResearchItems: false,
+    createResearchDoc: false,
+  });
 }
 
 /**
@@ -37,6 +42,7 @@ export async function setupStepsCompleted(db) {
  */
 export async function updateStepsCompleted(db, key) {
   // TODO: Implement.
+
   throw new Error(UNIMPLEMENTED_ERROR);
 }
 
