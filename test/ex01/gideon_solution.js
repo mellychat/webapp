@@ -24,7 +24,13 @@ import {
  */
 export async function setupStepsCompleted(db) {
   // TODO: Implement.
-  throw new Error(UNIMPLEMENTED_ERROR);
+  let topLevelCollection = db.collection(TOP_LEVEL_COLLECTION_NAME);
+  let completedSteps = topLevelCollection.doc(COMPLETED_STEPS_DOC_NAME);
+  return await completedSteps.set({
+    createAuthorInfo: false,
+    addResearchItems: false,
+    createResearchDoc: false,
+  });
 }
 
 /**
@@ -36,6 +42,7 @@ export async function setupStepsCompleted(db) {
  */
 export async function updateStepsCompleted(db, key) {
   // TODO: Implement.
+
   throw new Error(UNIMPLEMENTED_ERROR);
 }
 

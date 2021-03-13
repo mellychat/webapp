@@ -22,14 +22,10 @@ import {
 } from "./constants.js";
 
 // TODO: Add a statement with your solutions
-import * as MY_SOLUTION from "./solution";
-import * as TEMPLATE_SOLUTION from "./template";
+import * as GIDEON_SOLUTION from "./solution";
 
 // TODO: add it to the list of test suites.
-const testSuites = [
-  { name: "My Solution", solution: MY_SOLUTION },
-  { name: "Template Solution", solution: TEMPLATE_SOLUTION },
-];
+const testSuites = [{ name: "Gideon Solution", solution: GIDEON_SOLUTION }];
 
 /**
  * Initializes a test instance of Firebase Firestore emulators.
