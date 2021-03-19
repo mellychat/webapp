@@ -5,7 +5,6 @@
  * @Date: 2021/01/DD
  */
 
-import firebase, { firestore } from "firebase/app";
 import "firebase/firestore";
 
 import {
