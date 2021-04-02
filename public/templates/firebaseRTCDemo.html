@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--Don't change this file's name-->
 <html>
   <head>
     <meta charset="utf-8" />
@@ -9,37 +8,24 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="Template Mo" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <!--     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"> -->
     <title>Waiting Room | Melly</title>
+
     <link
       rel="shortcut icon"
       type="image/x-icon"
       href="/assets/images/favicon.jpg"
     />
 
-    <!--     Firebase Web RTC  -->
-    <script
-      defer
-      src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"
-    ></script>
-    <script defer src="/__/firebase/7.13.1/firebase-app.js"></script>
-    <script defer src="/__/firebase/7.13.1/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/init.js"></script>
-    <script defer src="/components/firebase.js"></script>
-
+    <!-- Styles -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
     <link
       href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/assets/css/prWaitingRoom.css"
-    />
+    <link rel="stylesheet" type="text/css" href="/assets/css/firebase.css" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -50,10 +36,13 @@
       type="text/css"
       href="/assets/css/templatemo-art-factory.css"
     />
+    <!-- Firebase Web RTC  -->
+    <script defer src="/__/firebase/7.13.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/7.13.1/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
 
-    <!-- Plugins -->
-    <script src="/components/navBar.js"></script>
-    <script defer src="/assets/js/jquery-bundle.js"></script>
+    <!-- Scripts -->
+    <script src="/assets/js/firebaseRTCDemo.js"></script>
   </head>
   <body>
     <div id="preloader">
@@ -64,38 +53,21 @@
       </div>
     </div>
     <!-- ***** Preloader End ***** -->
+
     <!-- ***** Header Area Start ***** -->
     <nav-bar></nav-bar>
     <!-- ***** Header Area End ***** -->
 
-    <h1 id="title">Read Patient Notes, then Join The Meeting!</h1>
     <div id="page-div">
-      <div id="pr-main">
-        <h1 class="heading">
-          Join To Meet:
-          <p class="patient-info" id="patient-name">
-            <span>John Doe</span>
-          </p>
-        </h1>
-
-        <h1 class="heading">
-          Issue:
-          <p class="patient-info" id="issue-name">Physical Health</p>
-        </h1>
-
-        <h1 class="heading">
-          Description:
-          <p class="patient-info" id="description">
-            I've been experiencing extreme fatigue lately :(
-          </p>
-        </h1>
+      <h1 class="match-header">Welcome to Melly!</h1>
+      <div>
+        <span id="current-room"></span>
       </div>
-      <!--   <div>
-      <span id="current-room"></span>
-  </div> -->
       <div id="videos">
-        <video id="local-video" muted autoplay playsinline></video>
-        <video hidden id="remote-video" autoplay playsinline></video>
+        <video id="local-video" size="480px" muted autoplay playsinline></video>
+        <video id="remote-video" autoplay playsinline></video>
+      </div>
+      <div id="buttons">
         <button
           class="main-button-slider mdc-button mdc-button--raised"
           id="camera-btn"
@@ -127,35 +99,26 @@
           >
           <span class="mdc-button__label">Match Me</span>
         </button>
-        <button class="mdc-button mdc-button--raised" disabled id="join-btn">
+        <button
+          hidden
+          class="mdc-button mdc-button--raised"
+          disabled
+          id="join-btn"
+        >
           <i class="material-icons mdc-button__icon" aria-hidden="true"
             >group</i
           >
           <span class="mdc-button__label">Join room</span>
         </button>
 
-        <button
-          hidden
-          class="mdc-button mdc-button--raised"
-          disabled
-          id="hangup-btn"
-        >
+        <button class="mdc-button mdc-button--raised" disabled id="hangup-btn">
           <i class="material-icons mdc-button__icon" aria-hidden="true"
             >close</i
           >
           <span class="mdc-button__label">Hangup</span>
         </button>
-        <!--       <button class="main-button-slider mdc-button mdc-button--raised"  id="cameraBtn">
-          <i class="material-icons mdc-button__icon" aria-hidden="true">perm_camera_mic</i>
-          <span class="mdc-button__label">Open camera & microphone</span>
-      </button>
-      <button class="mdc-button mdc-button--raised" disabled id="joinBtn">
-          <i class="material-icons mdc-button__icon" aria-hidden="true">group</i>
-          <span class="mdc-button__label">Join room</span>
-      </button> -->
       </div>
     </div>
-
     <div
       class="mdc-dialog"
       id="room-dialog"

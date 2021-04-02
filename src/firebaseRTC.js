@@ -1,3 +1,6 @@
+import "material-components-web/dist/material-components-web.css";
+import * as mdc from "material-components-web";
+
 mdc.ripple.MDCRipple.attachTo(document.querySelector(".mdc-button"));
 
 const configuration = {
@@ -16,10 +19,12 @@ let roomDialog = null;
 let roomId = null;
 
 function init() {
-  document.querySelector("#camera-btn").addEventListener("click", openUserMedia);
+  document
+    .querySelector("#camera-btn")
+    .addEventListener("click", openUserMedia);
   document.querySelector("#hangup-btn").addEventListener("click", hangUp);
   document.querySelector("#create-btn").addEventListener("click", createRoom);
-  document.querySelector("#match-me").addEventListener("click", createAndJoin); 
+  document.querySelector("#match-me").addEventListener("click", createAndJoin);
   document.querySelector("#match-me").disabled = false;
   document.querySelector("#join-btn").addEventListener("click", joinRoom);
   document.querySelector("#join-btn").disabled = true;

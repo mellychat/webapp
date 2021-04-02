@@ -2,9 +2,39 @@ const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: "./src/jquery-plugins/init.js",
+  entry: {
+    index: ["./src/index.js", "./src/page-load.js", "./src/navBarLoader.js"],
+    demo: ["./src/demo.js", "./src/page-load.js", "./src/navBarLoader.js"],
+    patientSignUp: [
+      "./src/patientSignUp.js",
+      "./src/page-load.js",
+      "./src/navBarLoader.js",
+    ],
+    patientWaitingRoom: [
+      "./src/firebaseRTC.js",
+      "./src/page-load.js",
+      "./src/navBarLoader.js",
+    ],
+    practitionerSignUp: [
+      "./src/practitionerSignUp.js",
+      "./src/page-load.js",
+      "./src/navBarLoader.js",
+    ],
+    practitionerWaitingRoom: [
+      "./src/firebaseRTC.js",
+      "./src/page-load.js",
+      "./src/navBarLoader.js",
+    ],
+    firebaseRTCDemo: [
+      "./src/firebaseRTC.js",
+      "./src/page-load.js",
+      "./src/navBarLoader.js",
+    ],
+    // This one is special it is an entry point used to load dependencies of the
+    // Nav bar page itself.
+    navBarPage: ["./src/navBarPage.js"],
+  },
   output: {
-    filename: "jquery-bundle.js",
     // TODO: This should go in /dist but because the firebase.json ignores
     // everything in the project directory it isn't available on the deployed
     // server. To resolve this we need to move everything from the public/ to

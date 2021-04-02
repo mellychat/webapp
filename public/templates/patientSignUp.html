@@ -10,18 +10,17 @@
     <meta name="description" content="" />
     <meta name="author" content="Steve Leke" />
     <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>Sign Up |Melly</title>
 
     <!-- Icon for website tab -->
     <link
-      rel="shortcut icon" 
-      type="image/x-icon" 
-      href="/assets/images/favicon.jpg" />
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/assets/images/favicon.jpg"
     />
-
 
     <!-- Import font style -->
     <link
@@ -44,12 +43,9 @@
     />
 
     <!-- Scripts -->
-
-    <script defer src="/components/patientSignUp.js"></script>
+    <script defer src="/assets/js/patientSignUp.js"></script>
 
     <!-- Plugins -->
-    <script src="/components/navBar.js"></script>
-    <script defer src="/assets/js/jquery-bundle.js"></script>
   </head>
   <body>
     <!-- ***** Preloader Start ***** -->
@@ -85,7 +81,7 @@
           <h1 class="form-text">Fill The Form To Get Matched!</h1>
           <form
             id="sign-up-form"
-            action="/templates/patWaitingRoom.html"
+            action="/templates/patientWaitingRoom.html"
             method="post"
           >
             <!-- ***** Top Row Start ***** -->
@@ -118,25 +114,37 @@
             <!-- Input field for last name -->
             <div class="field-wrap">
               <label>Last Name<span class="req">*</span> </label>
-              <input type="text" id="last-name" name="last-name" maxlength="15" autocomplete="off" required />
+              <input
+                type="text"
+                id="last-name"
+                name="last-name"
+                maxlength="15"
+                autocomplete="off"
+                required
+              />
             </div>
-          </div>
-          <!-- ***** Top Row End ***** -->
-          <!-- Input field for description of issue -->
-          <div class="field-wrap">
-            <textarea id="text-area" name="paragraph-text" placeholder="Please give a short description of your issue."
-              cols="50" rows="10" maxlength="300" required></textarea>
-            <button type="submit" id="button" class="button button-block">
-              <span style="color: #fff">Match Me!</span>
-            </button>
-          </div>
-        </form>
+            <!-- ***** Top Row End ***** -->
+            <!-- Input field for description of issue -->
+            <div class="field-wrap">
+              <textarea
+                id="text-area"
+                name="paragraph-text"
+                placeholder="Please give a short description of your issue."
+                cols="50"
+                rows="10"
+                maxlength="300"
+                required
+              ></textarea>
+              <button type="submit" id="button" class="button button-block">
+                <span style="color: #fff">Match Me!</span>
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- ***** Sign Up Area End ***** -->
       </div>
-      <!-- ***** Sign Up Area End ***** -->
+      <!-- ***** Tab Content End ***** -->
     </div>
-    <!-- ***** Tab Content End ***** -->
-  </div>
-  <!-- ***** Form End ***** -->
-</body>
-
+    <!-- ***** Form End ***** -->
+  </body>
 </html>
