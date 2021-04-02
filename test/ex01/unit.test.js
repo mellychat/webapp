@@ -22,13 +22,11 @@ import {
 } from "./constants.js";
 
 // TODO: Add a statement with your solutions
-import * as MY_SOLUTION from "./solution";
-import * as TEMPLATE_SOLUTION from "./template";
+import * as MANNENDRI_SOLUTION from "./mannendri-ex1";
 
 // TODO: add it to the list of test suites.
 const testSuites = [
-  { name: "My Solution", solution: MY_SOLUTION },
-  { name: "Template Solution", solution: TEMPLATE_SOLUTION },
+  { name: "Mannendri's Solution", solution: MANNENDRI_SOLUTION },
 ];
 
 /**

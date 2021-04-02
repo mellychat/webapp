@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "clean": "rm -rf ./node_modules",
+    "prereinstall": "npm run clean",
+    "reinstall": "npm run clean && npm install",
+    "prerebuild": "npm run reinstall",
+    "rebuild": "npm run clean && npm install && npm run build",
+    "prestart:local": "npm run stop:firebase",
+    "start:local": "firebase serve -P dev --only hosting",
+    "stop:firebase": "lsof -ti :5000-5003 | xargs --no-run-if-empty kill",
+    "pretest": "npm run stop:firebase",
+    "test": "env FIRESTORE_EMULATOR_HOST=localhost:5002 firebase emulators:exec \"mocha  --timeout 10000 --recursive test/**/*.js --require esm --exit\""
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^1.1.9",
+    "chai": "^4.2.0",
+    "esm": "^3.2.25",
+    "firebase": "^7.13.1",
+    "firebase-tools": "^9.2.2",
+    "mocha": "^8.2.1",
+    "prettier": "2.2.1"
+  }
+}
